@@ -110,14 +110,3 @@ Experienced developer with a strong foundation in building highly scalable web a
 * 🥇 **Winner** | CoinQuest Hackathon
 
 ---
-
-## 🌐 Connect With Me
-
-<p align="left">
-  <a href="https://www.linkedin.com/in/kotasriramamanish07/" target="_blank" title="LinkedIn"><img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" height="40"/></a>&nbsp;&nbsp;<a href="mailto:manishcse2006@gmail.com" title="Email"><img src="https://skillicons.dev/icons?i=gmail" alt="Email" height="40"/></a>
-</p>
-
-<p align="left">
-  <strong>Portfolio:</strong> <a href="https://manish-chi.vercel.app/" target="_blank" title="Personal Portfolio Website">manish-chi.vercel.app</a> &nbsp;•&nbsp; <strong>Resume:</strong> <a href="https://drive.google.com/file/d/1-nRGWdWntkj9s5_u0zdx_nYxoeablMRz/view?usp=sharing" target="_blank" title="Download Resume">Curriculum Vitae</a>
-</p>
-
