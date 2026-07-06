@@ -101,12 +101,3 @@ Experienced developer with a strong foundation in building highly scalable web a
   <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=Manish-111913&layout=compact&theme=tokyonight" alt="Top Languages" height="175"/>
 </p>
 
----
-
-## 🏆 Achievements
-
-* 🥈 **Runner-Up** | Centific AI Hackathon
-* 🏆 **Top 1%** | NxtWave Coding Challenge
-* 🥇 **Winner** | CoinQuest Hackathon
-
----
