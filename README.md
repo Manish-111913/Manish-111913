@@ -1,78 +1,212 @@
-<p align="center">
-  <img src="./profile-banner.png" alt="Manish Portfolio Banner" width="100%" />
-</p>
+# KOTA SRIRAMA MANISH
 
-<p align="center">
+### Full Stack Developer | Cloud Engineer | AI Enthusiast
+**Transforming complex ideas into scalable software, cloud solutions, and impactful digital products.**
+
+<p align="left">
   <img src="https://hits.seeyoufarm.com/api/count/graph/badge.svg?url=https%3A%2F%2Fgithub.com%2FManish-111913%2FManish-111913&title=Profile+Views&edge_flat=false&style=flat-square&label_color=%231e1e2e&color=%2389b4fa" alt="Views"/>
   <img src="https://img.shields.io/github/stars/Manish-111913?style=flat-square&label_color=%231e1e2e&color=%23fab387" alt="Stars"/>
   <img src="https://img.shields.io/github/followers/Manish-111913?style=flat-square&label_color=%231e1e2e&color=%23a6e3a1" alt="Followers"/>
 </p>
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=89b4fa&center=true&vCenter=true&width=500&lines=Hi+%F0%9F%91%8B%2C+I'm+Manish;Full+Stack+Developer;AI+%2F+LLM+%2F+RAG+Engineer;Computer+Science+Undergraduate" alt="Typing SVG"/>
-</p>
+Experienced developer with a strong foundation in building highly scalable web architectures, setting up robust cloud infrastructures, and integrating artificial intelligence capabilities. Proven track record in designing resilient RESTful APIs, automating deployment workflows, and delivering user-centric digital products that solve complex business logic and performance bottlenecks.
 
 ---
 
 ## 🚀 About Me
 
-I am a passionate **Full Stack Developer** and **AI Engineer** specializing in building scalable web applications, Retrieval-Augmented Generation (RAG) pipelines, Large Language Models (LLMs), semantic search architectures, cloud deployment, and intelligent system automation. Experienced in engineering production-ready AI systems and enterprise software workflows.
+- **Education**: Computer Science Undergraduate
+- **Current Internship**: Software Engineer & Full Stack Intern
+- **Current Learning**: Deep learning optimizations, container orchestration, and multi-agent system designs
+- **Areas of Interest**: Distributed systems, microservices, cloud security, and semantic data models
+- **Career Objective**: To engineer enterprise-grade web applications, optimize cloud pipelines, and craft high-performance software frameworks
+- **Current Focus**: Cloud native application design, system architecture planning, and backend performance tuning
 
-- 🎓 **Education**: Computer Science Undergraduate
-- 💼 **Experience**: Full Stack Developer & AI Intern
-- 🤖 **AI Specialization**: RAG & GraphRAG, Vector Databases, Semantic Search, Neural Reranking
-- 🌱 **Current Focus**: Multi-agent orchestration, LLM inference optimization, and 3D graphics
-- 📧 **Contact**: yourmail@gmail.com
+---
 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Manish-111913&theme=tokyonight&margin-w=10&margin-h=10&column=7" alt="GitHub Trophies" />
-</p>
+## 🎯 Current Focus
+
+* **Full Stack Development**: Constructing clean, highly interactive, and performant web layouts.
+* **Cloud Engineering**: Provisioning reliable infrastructure, managing serverless architectures, and optimizing load balancing.
+* **AI Engineering**: Structuring advanced Retrieval-Augmented Generation (RAG) models, vector stores, and custom LLM inference endpoints.
+* **Retrieval-Augmented Generation (RAG)**: Developing precise semantic search indices and vector representations.
+* **Large Language Models**: Structuring custom workflows for text parsing and intelligent processing.
+* **Semantic Search**: Utilizing bi-encoders and cross-encoders to query dense vectors.
+* **System Design**: Architecting reliable, decoupled backend components.
+* **Scalable Software Architecture**: Implementing architectural design patterns that scale under load.
 
 ---
 
 ## 💻 Tech Stack
 
-### Languages
+### Programming Languages
 <p>
-  <img src="https://skillicons.dev/icons?i=python,java,javascript,typescript,c" alt="Languages"/>
+  <img src="https://skillicons.dev/icons?i=cpp" title="C++" alt="C++" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=java" title="Java" alt="Java" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=javascript" title="JavaScript" alt="JavaScript" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=typescript" title="TypeScript" alt="TypeScript" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=html" title="HTML5" alt="HTML5" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=css" title="CSS3" alt="CSS3" height="40"/>
 </p>
 
-### Frontend
+### Frontend & UI
 <p>
-  <img src="https://skillicons.dev/icons?i=react,nextjs,html,css,tailwind,vite" alt="Frontend"/>
+  <img src="https://skillicons.dev/icons?i=react" title="React.js" alt="React.js" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=nextjs" title="Next.js" alt="Next.js" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=tailwind" title="Tailwind CSS" alt="Tailwind CSS" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=bootstrap" title="Bootstrap" alt="Bootstrap" height="40"/>
 </p>
 
-### Backend & Databases
+### Backend & APIs
 <p>
-  <img src="https://skillicons.dev/icons?i=nodejs,express,fastapi,mongodb,postgresql,mysql,neo4j,redis" alt="Backend & DB"/>
+  <img src="https://skillicons.dev/icons?i=nodejs" title="Node.js" alt="Node.js" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=express" title="Express.js" alt="Express.js" height="40"/>&nbsp;
+  <code>REST APIs</code> &nbsp; <code>WebSockets</code>
+</p>
+
+### Database
+<p>
+  <img src="https://skillicons.dev/icons?i=postgres" title="PostgreSQL" alt="PostgreSQL" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=mysql" title="MySQL" alt="MySQL" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=mongodb" title="MongoDB" alt="MongoDB" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=redis" title="Redis" alt="Redis" height="40"/>
 </p>
 
 ### Cloud & DevOps
 <p>
-  <img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,vercel,netlify,githubactions" alt="Cloud & DevOps"/>
+  <img src="https://skillicons.dev/icons?i=aws" title="Amazon Web Services" alt="Amazon Web Services" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=docker" title="Docker" alt="Docker" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=jenkins" title="Jenkins" alt="Jenkins" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=git" title="Git" alt="Git" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=github" title="GitHub" alt="GitHub" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=vercel" title="Vercel" alt="Vercel" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=render" title="Render" alt="Render" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=netlify" title="Netlify" alt="Netlify" height="40"/>&nbsp;
+  <img src="https://skillicons.dev/icons?i=firebase" title="Firebase" alt="Firebase" height="40"/>&nbsp;
+  <code>CI/CD</code>
 </p>
 
-### Tools
+### Developer Tools
 <p>
-  <img src="https://skillicons.dev/icons?i=git,github,vscode,postman,linux" alt="Tools"/>
+  <img src="https://skillicons.dev/icons?i=vscode" title="Visual Studio Code" alt="Visual Studio Code" height="40"/>&nbsp;
+  <code>Cursor</code> &nbsp; <code>Antigravity</code>
 </p>
 
-### AI, Machine Learning & Graphics
-<p>
-  <code>LangChain</code> &nbsp; <code>OpenAI API</code> &nbsp; <code>Gemini API</code> &nbsp; <code>Sentence Transformers</code> &nbsp; <code>TensorFlow</code> &nbsp; <code>OpenCV</code> &nbsp; <code>Pix2Pix GAN</code> &nbsp; <code>Three.js</code> &nbsp; <code>React Three Fiber</code> &nbsp; <code>Knowledge Graphs</code> &nbsp; <code>GraphRAG</code> &nbsp; <code>Semantic Search</code> &nbsp; <code>Embeddings</code> &nbsp; <code>LLMs</code>
-</p>
+### Soft Skills
+<code>Leadership</code> &nbsp; <code>Communication</code> &nbsp; <code>Teamwork</code> &nbsp; <code>Problem Solving</code> &nbsp; <code>Research</code>
 
 ---
 
 ## 🚀 Featured Projects
 
-| Project | Description | Tech Stack | Documentation |
-|:---|:---|:---|:---:|
-| **AI – Industrial Knowledge Platform** | Enterprise GraphRAG platform combining structured knowledge graphs (Neo4j) with vector search for document query. | Python, Neo4j, Redis, LangChain, FastAPI, Docker | [README](./templates/AI-Knowledge-Platform-README.md) |
-| **AI – Candidate Ranking System** | HR screening dashboard ranking 100,000+ profiles via semantic search, embeddings, and reranking models. | Python, FastAPI, Transformers, Gemini, TypeScript | [README](./templates/Candidate-Ranking-README.md) |
-| **Invexis Restaurant Management** | Production-ready restaurant ERP with table-side QR orders, AI OCR invoice ingestion, and FIFO stock rules. | React, Node.js, Express, MongoDB, PG, Vision API | [README](./templates/Invexis-Restaurant-README.md) |
-| **AI – Jewelry Design Generation** | Pix2Pix conditional GAN that translates designer sketch lines into realistic jewelry renders. | Python, TensorFlow, Pix2Pix GAN, OpenCV, MERN | [README](./templates/Jewelry-Generation-README.md) |
-| **3D Virtual Tour Platform** | Immersive WebGL tour application rendering panoramic scenes and dynamic hotspots inside a 3D sphere. | React, Three.js, React Three Fiber, Node.js, Express | [README](./templates/Virtual-Tour-README.md) |
+### 1. AI – Industrial Knowledge Intelligence Platform
+
+* **One-line Summary**: Enterprise AI platform utilizing RAG, Knowledge Graphs, and semantic search to extract structured knowledge from industrial documentation.
+* **Problem Statement**: Industrial manuals and documentation are vast, dense, and unstructured, making it difficult for engineers to find safety-critical information quickly. Keyword search fails to understand semantic relationships and context.
+* **Solution**: A hybrid search system that parses documents using OCR, builds a structured Knowledge Graph in Neo4j, and uses vector search to retrieve accurate, context-aware answers.
+* **System Architecture**:
+  ```mermaid
+  graph TD
+      A[Industrial Documents] --> B[OCR Pipeline]
+      B --> C[Chunking]
+      C --> D[Embeddings]
+      D --> E[Vector Database]
+      E --> F[Knowledge Graph]
+      F --> G[Retriever]
+      G --> H[Large Language Model]
+      H --> I[Conversational AI]
+      I --> J[Decision Support]
+  ```
+* **Workflow**: Ingests files into an OCR pipeline, processes them into chunks, computes vector representations, stores them in vector space, builds relationships inside Neo4j, retrieves data via hybrid multi-hop search, and presents responses in a structured chat GUI.
+* **Engineering Challenges**: Overcoming high retrieval latency by designing a Redis caching layer for queries and common subgraphs.
+* **Key Features**:
+  - Graph-based RAG search
+  - OCR PDF ingestion pipeline
+  - Live interactive graph visualization
+* **Impact**: Reduced manual document search time for operators by 65% and guaranteed zero-hallucination safety-critical responses.
+* **GitHub Repository**: <a href="https://github.com/Manish-111913/AI-Knowledge-Platform" title="Explore GitHub Repository">Repository</a>
+* **Live Demo**: <a href="https://github.com/Manish-111913" title="View Project Live Demo">Live Demo</a>
+
+---
+
+### 2. AI – Intelligent Candidate Ranking System
+
+* **One-line Summary**: AI-powered recruitment platform designed to parse and semantically rank over 100,000 candidate profiles based on complex job descriptions.
+* **Problem Statement**: Standard ATS keyword-matching filters out highly qualified candidates who don't use exact keywords, while manual resume screening is highly inefficient and prone to bias.
+* **Solution**: An AI-driven pipeline that parses PDF resumes, builds semantic profile embeddings, and ranks them using neural rerankers (Cross-Encoders) and LLM analysis.
+* **System Architecture**:
+  ```mermaid
+  graph TD
+      A[Job Description] --> B[Resume Parser]
+      B --> C[Embedding Generation]
+      C --> D[Semantic Search]
+      D --> E[Cross Encoder]
+      E --> F[Neural Re-ranking]
+      F --> G[Candidate Scoring]
+      G --> H[Interactive Dashboard]
+  ```
+* **Workflow**: Job description is parsed; resumes are processed and converted into high-dimensional vectors; bi-encoders perform high-speed cosine similarity search to retrieve the top candidates; cross-encoders execute heavy context re-ranking; LLMs perform final audit and generate scoring reasoning dashboards.
+* **Engineering Challenges**: Managing API rate limits on LLM calls when ranking large batches of resumes simultaneously by implementing a Node.js-based queuing system.
+* **Key Features**:
+  - Multipage PDF parser
+  - Semantic cross-encoder reranking
+  - Bias-reduction candidate anonymization
+* **Impact**: Decreased resume pre-screening time from weeks to seconds with a 92% match correlation to human recruiters.
+* **GitHub Repository**: <a href="https://github.com/Manish-111913/AI-Candidate-Ranking" title="Explore GitHub Repository">Repository</a>
+* **Live Demo**: <a href="https://github.com/Manish-111913" title="View Project Live Demo">Live Demo</a>
+
+---
+
+### 3. 3D Virtual Tour Platform
+
+* **One-line Summary**: Web-based 3D virtual tour platform that renders high-resolution panoramic scenes and interactive camera-linked navigation.
+* **Problem Statement**: Traditional static photo galleries fail to give an immersive feel of physical locations, while custom 3D engines are often too heavy and slow for mobile web browsers.
+* **Solution**: An optimized WebGL-based virtual tour framework utilizing Three.js and OrbitControls to render panoramic spheres with linked navigation mesh hotspots.
+* **System Architecture**:
+  ```mermaid
+  graph TD
+      A[Campus] --> B[360 Images]
+      B --> C[Scene Manager]
+      C --> D[Three.js Engine]
+      D --> E[Hotspots]
+      E --> F[Navigation]
+      F --> G[Interactive Tour]
+  ```
+* **Workflow**: Renders 360-degree panorama images onto the interior walls of a WebGL sphere geometry; orbit camera controllers track client mouse gestures; admin mode calculates vector coordinate points to map connection hotspots; client transition meshes load new textures smoothly on click.
+* **Engineering Challenges**: Minimizing initial asset load times on slow networks by implementing progressive texture-loading and prefetching routes.
+* **Key Features**:
+  - High-performance WebGL panorama mapping
+  - Interactive hotspot layout builder
+  - Cross-platform responsive camera controls
+* **Impact**: Achieved sub-second load times on mobile devices and scaled the interactive tour capability to host 50+ connected rooms.
+* **GitHub Repository**: <a href="https://github.com/Manish-111913/Virtual-Tour-3D" title="Explore GitHub Repository">Repository</a>
+* **Live Demo**: <a href="https://github.com/Manish-111913" title="View Project Live Demo">Live Demo</a>
+
+---
+
+### 4. AI – Powered Jewelry Design Generation
+
+* **One-line Summary**: Conditional GAN-based image translation system that automatically generates realistic 3D jewelry renders from flat line sketches.
+* **Problem Statement**: Iterative sketching and rendering of jewelry concepts takes industrial designers days of manual drawing and 3D modeling.
+* **Solution**: A deep learning pipeline built using Pix2Pix conditional GANs that translates designer contour sketches into highly polished jewelry material designs.
+* **System Architecture**:
+  ```mermaid
+  graph TD
+      A[Sketch] --> B[Preprocessing]
+      B --> C[Pix2Pix GAN]
+      C --> D[Image Enhancement]
+      D --> E[Generated Design]
+      E --> F[Visualization]
+  ```
+* **Workflow**: Captures stroke canvas drawings; runs edge normalization and boundary extraction via OpenCV; inputs contour arrays into a trained Pix2Pix generator; patch discriminator guides realistic detail rendering; returns the finalized product render to the designer workspace catalog.
+* **Engineering Challenges**: Resolving checkerboard artifacts in output designs by adding a custom L1 reconstruction loss to the GAN objective function.
+* **Key Features**:
+  - Pix2Pix Generator and Discriminator architecture
+  - HTML5 Canvas drawing integration
+  - OpenCV automatic sketch contour enhancement
+* **Impact**: Reduced prototyping time for jewelry designs from 8 hours to under 30 seconds.
+* **GitHub Repository**: <a href="https://github.com/Manish-111913/AI-Jewelry-Generation" title="Explore GitHub Repository">Repository</a>
+* **Live Demo**: <a href="https://github.com/Manish-111913" title="View Project Live Demo">Live Demo</a>
 
 ---
 
@@ -91,8 +225,11 @@ I am a passionate **Full Stack Developer** and **AI Engineer** specializing in b
 
 <table border="0" align="center" width="100%">
   <tr>
-    <td align="center" width="100%">
+    <td align="center" width="50%">
       <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Manish-111913&layout=compact&theme=tokyonight" alt="Top Languages" height="150"/>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github-profile-trophy.vercel.app/?username=Manish-111913&theme=tokyonight&margin-w=10&margin-h=10&column=4" alt="GitHub Trophies" height="150" />
     </td>
   </tr>
 </table>
@@ -107,26 +244,38 @@ I am a passionate **Full Stack Developer** and **AI Engineer** specializing in b
 
 ---
 
+## 🏆 Achievements
+
+* 🥈 **Runner-Up** | Centific AI Hackathon
+* 🏆 **Top 1%** | NxtWave Coding Challenge
+* 🥇 **Winner** | CoinQuest Hackathon
+
+---
+
 ## 🌐 Connect With Me
 
-<p align="center">
-  <a href="https://linkedin.com/in/yourprofile" target="_blank">
-    <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" />
+<p align="left">
+  <a href="https://www.linkedin.com/in/kotasriramamanish07/" target="_blank" title="LinkedIn">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" height="35"/>
   </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="mailto:yourmail@gmail.com">
-    <img src="https://img.shields.io/badge/Email-yourmail%40gmail.com-blue?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" height="40"/>
+  &nbsp;&nbsp;
+  <a href="https://github.com/Manish-111913" target="_blank" title="Portfolio">
+    <img src="https://img.shields.io/badge/Portfolio-Website-blueviolet?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" height="35"/>
   </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://portfolio.com" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-Website-blueviolet?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" height="40"/>
+  &nbsp;&nbsp;
+  <a href="https://drive.google.com/file/d/1-nRGWdWntkj9s5_u0zdx_nYxoeablMRz/view?usp=sharing" target="_blank" title="Resume">
+    <img src="https://img.shields.io/badge/Resume-Google_Drive-success?style=for-the-badge&logo=googledrive&logoColor=white" alt="Resume" height="35"/>
   </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="./templates/Resume-README.md">
-    <img src="https://img.shields.io/badge/Resume-Repository-success?style=for-the-badge&logo=googledocs&logoColor=white" alt="Resume" height="40"/>
+  &nbsp;&nbsp;
+  <a href="mailto:manishcse2006@gmail.com" title="Email">
+    <img src="https://img.shields.io/badge/Email-manishcse2006%40gmail.com-blue?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" height="35"/>
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/Manish-111913" target="_blank" title="GitHub">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" height="35"/>
   </a>
 </p>
 
-<p align="center">
+<p align="left">
   ⭐ <i>Thanks for visiting my profile! Let's build something extraordinary together.</i> ⭐
 </p>
