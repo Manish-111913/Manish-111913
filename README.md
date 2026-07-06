@@ -9,7 +9,7 @@ Experienced developer with a strong foundation in building highly scalable web a
 
 ---
 
-## 🚀 About Me
+## About Me
 
 - **Education**: Computer Science Undergraduate
 - **Current Internship**: Software Engineer & Full Stack Intern
@@ -20,7 +20,7 @@ Experienced developer with a strong foundation in building highly scalable web a
 
 ---
 
-## 🎯 Current Focus
+## Current Focus
 
 * **Full Stack Development**: Constructing clean, highly interactive, and performant web layouts.
 * **Cloud Engineering**: Provisioning reliable infrastructure, managing serverless architectures, and optimizing load balancing.
@@ -33,7 +33,7 @@ Experienced developer with a strong foundation in building highly scalable web a
 
 ---
 
-## 💻 Tech Stack
+## Tech Stack
 
 ### Programming Languages
 <p>
@@ -93,11 +93,31 @@ Experienced developer with a strong foundation in building highly scalable web a
 ---
 
 
-## 📈 GitHub Statistics
+## GitHub Statistics
 
 <p align="center">
   <img src="https://streak-stats.demolab.com/?user=Manish-111913&theme=tokyonight" alt="GitHub Streak" height="175"/>
   &nbsp;&nbsp;
   <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=Manish-111913&layout=compact&theme=tokyonight" alt="Top Languages" height="175"/>
+
+
+---
+
+## Achievements
+
+* **Runner-Up** | Centific AI Hackathon
+* **Top 1%** | NxtWave Coding Challenge
+* **Winner** | CoinQuest Hackathon
+
+---
+
+## Connect With Me
+
+<p align="left">
+  <a href="https://www.linkedin.com/in/kotasriramamanish07/" target="_blank" title="LinkedIn"><img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" height="40"/></a>&nbsp;&nbsp;<a href="mailto:manishcse2006@gmail.com" title="Email"><img src="https://skillicons.dev/icons?i=gmail" alt="Email" height="40"/></a>
+</p>
+
+<p align="left">
+  <strong>Portfolio:</strong> <a href="https://manish-chi.vercel.app/" target="_blank" title="Personal Portfolio Website">manish-chi.vercel.app</a> &nbsp;•&nbsp; <strong>Resume:</strong> <a href="https://drive.google.com/file/d/1-nRGWdWntkj9s5_u0zdx_nYxoeablMRz/view?usp=sharing" target="_blank" title="Download Resume">Curriculum Vitae</a>
 </p>
 
