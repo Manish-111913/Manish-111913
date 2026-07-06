@@ -3,11 +3,7 @@
 ### Full Stack Developer | Cloud Engineer | AI Enthusiast
 **Transforming complex ideas into scalable software, cloud solutions, and impactful digital products.**
 
-<p align="left">
-  <img src="https://hits.seeyoufarm.com/api/count/graph/badge.svg?url=https%3A%2F%2Fgithub.com%2FManish-111913%2FManish-111913&title=Profile+Views&edge_flat=false&style=flat-square&label_color=%231e1e2e&color=%2389b4fa" alt="Views"/>
-  <img src="https://img.shields.io/github/stars/Manish-111913?style=flat-square&label_color=%231e1e2e&color=%23fab387" alt="Stars"/>
-  <img src="https://img.shields.io/github/followers/Manish-111913?style=flat-square&label_color=%231e1e2e&color=%23a6e3a1" alt="Followers"/>
-</p>
+
 
 Experienced developer with a strong foundation in building highly scalable web architectures, setting up robust cloud infrastructures, and integrating artificial intelligence capabilities. Proven track record in designing resilient RESTful APIs, automating deployment workflows, and delivering user-centric digital products that solve complex business logic and performance bottlenecks.
 
@@ -105,18 +101,22 @@ Experienced developer with a strong foundation in building highly scalable web a
 * **Problem Statement**: Industrial manuals and documentation are vast, dense, and unstructured, making it difficult for engineers to find safety-critical information quickly. Keyword search fails to understand semantic relationships and context.
 * **Solution**: A hybrid search system that parses documents using OCR, builds a structured Knowledge Graph in Neo4j, and uses vector search to retrieve accurate, context-aware answers.
 * **System Architecture**:
-  ```mermaid
-  graph TD
-      A[Industrial Documents] --> B[OCR Pipeline]
-      B --> C[Chunking]
-      C --> D[Embeddings]
-      D --> E[Vector Database]
-      E --> F[Knowledge Graph]
-      F --> G[Retriever]
-      G --> H[Large Language Model]
-      H --> I[Conversational AI]
-      I --> J[Decision Support]
-  ```
+  <details>
+    <summary>View Architecture Diagram</summary>
+
+    ```mermaid
+    graph TD
+        A[Industrial Documents] --> B[OCR Pipeline]
+        B --> C[Chunking]
+        C --> D[Embeddings]
+        D --> E[Vector Database]
+        E --> F[Knowledge Graph]
+        F --> G[Retriever]
+        G --> H[Large Language Model]
+        H --> I[Conversational AI]
+        I --> J[Decision Support]
+    ```
+  </details>
 * **Workflow**: Ingests files into an OCR pipeline, processes them into chunks, computes vector representations, stores them in vector space, builds relationships inside Neo4j, retrieves data via hybrid multi-hop search, and presents responses in a structured chat GUI.
 * **Engineering Challenges**: Overcoming high retrieval latency by designing a Redis caching layer for queries and common subgraphs.
 * **Key Features**:
@@ -124,8 +124,6 @@ Experienced developer with a strong foundation in building highly scalable web a
   - OCR PDF ingestion pipeline
   - Live interactive graph visualization
 * **Impact**: Reduced manual document search time for operators by 65% and guaranteed zero-hallucination safety-critical responses.
-* **GitHub Repository**: <a href="https://github.com/Manish-111913/AI-Knowledge-Platform" title="Explore GitHub Repository">Repository</a>
-* **Live Demo**: <a href="https://github.com/Manish-111913" title="View Project Live Demo">Live Demo</a>
 
 ---
 
@@ -135,16 +133,20 @@ Experienced developer with a strong foundation in building highly scalable web a
 * **Problem Statement**: Standard ATS keyword-matching filters out highly qualified candidates who don't use exact keywords, while manual resume screening is highly inefficient and prone to bias.
 * **Solution**: An AI-driven pipeline that parses PDF resumes, builds semantic profile embeddings, and ranks them using neural rerankers (Cross-Encoders) and LLM analysis.
 * **System Architecture**:
-  ```mermaid
-  graph TD
-      A[Job Description] --> B[Resume Parser]
-      B --> C[Embedding Generation]
-      C --> D[Semantic Search]
-      D --> E[Cross Encoder]
-      E --> F[Neural Re-ranking]
-      F --> G[Candidate Scoring]
-      G --> H[Interactive Dashboard]
-  ```
+  <details>
+    <summary>View Architecture Diagram</summary>
+
+    ```mermaid
+    graph TD
+        A[Job Description] --> B[Resume Parser]
+        B --> C[Embedding Generation]
+        C --> D[Semantic Search]
+        D --> E[Cross Encoder]
+        E --> F[Neural Re-ranking]
+        F --> G[Candidate Scoring]
+        G --> H[Interactive Dashboard]
+    ```
+  </details>
 * **Workflow**: Job description is parsed; resumes are processed and converted into high-dimensional vectors; bi-encoders perform high-speed cosine similarity search to retrieve the top candidates; cross-encoders execute heavy context re-ranking; LLMs perform final audit and generate scoring reasoning dashboards.
 * **Engineering Challenges**: Managing API rate limits on LLM calls when ranking large batches of resumes simultaneously by implementing a Node.js-based queuing system.
 * **Key Features**:
@@ -152,8 +154,6 @@ Experienced developer with a strong foundation in building highly scalable web a
   - Semantic cross-encoder reranking
   - Bias-reduction candidate anonymization
 * **Impact**: Decreased resume pre-screening time from weeks to seconds with a 92% match correlation to human recruiters.
-* **GitHub Repository**: <a href="https://github.com/Manish-111913/AI-Candidate-Ranking" title="Explore GitHub Repository">Repository</a>
-* **Live Demo**: <a href="https://github.com/Manish-111913" title="View Project Live Demo">Live Demo</a>
 
 ---
 
@@ -163,15 +163,19 @@ Experienced developer with a strong foundation in building highly scalable web a
 * **Problem Statement**: Traditional static photo galleries fail to give an immersive feel of physical locations, while custom 3D engines are often too heavy and slow for mobile web browsers.
 * **Solution**: An optimized WebGL-based virtual tour framework utilizing Three.js and OrbitControls to render panoramic spheres with linked navigation mesh hotspots.
 * **System Architecture**:
-  ```mermaid
-  graph TD
-      A[Campus] --> B[360 Images]
-      B --> C[Scene Manager]
-      C --> D[Three.js Engine]
-      D --> E[Hotspots]
-      E --> F[Navigation]
-      F --> G[Interactive Tour]
-  ```
+  <details>
+    <summary>View Architecture Diagram</summary>
+
+    ```mermaid
+    graph TD
+        A[Campus] --> B[360 Images]
+        B --> C[Scene Manager]
+        C --> D[Three.js Engine]
+        D --> E[Hotspots]
+        E --> F[Navigation]
+        F --> G[Interactive Tour]
+    ```
+  </details>
 * **Workflow**: Renders 360-degree panorama images onto the interior walls of a WebGL sphere geometry; orbit camera controllers track client mouse gestures; admin mode calculates vector coordinate points to map connection hotspots; client transition meshes load new textures smoothly on click.
 * **Engineering Challenges**: Minimizing initial asset load times on slow networks by implementing progressive texture-loading and prefetching routes.
 * **Key Features**:
@@ -179,8 +183,6 @@ Experienced developer with a strong foundation in building highly scalable web a
   - Interactive hotspot layout builder
   - Cross-platform responsive camera controls
 * **Impact**: Achieved sub-second load times on mobile devices and scaled the interactive tour capability to host 50+ connected rooms.
-* **GitHub Repository**: <a href="https://github.com/Manish-111913/Virtual-Tour-3D" title="Explore GitHub Repository">Repository</a>
-* **Live Demo**: <a href="https://github.com/Manish-111913" title="View Project Live Demo">Live Demo</a>
 
 ---
 
@@ -190,14 +192,18 @@ Experienced developer with a strong foundation in building highly scalable web a
 * **Problem Statement**: Iterative sketching and rendering of jewelry concepts takes industrial designers days of manual drawing and 3D modeling.
 * **Solution**: A deep learning pipeline built using Pix2Pix conditional GANs that translates designer contour sketches into highly polished jewelry material designs.
 * **System Architecture**:
-  ```mermaid
-  graph TD
-      A[Sketch] --> B[Preprocessing]
-      B --> C[Pix2Pix GAN]
-      C --> D[Image Enhancement]
-      D --> E[Generated Design]
-      E --> F[Visualization]
-  ```
+  <details>
+    <summary>View Architecture Diagram</summary>
+
+    ```mermaid
+    graph TD
+        A[Sketch] --> B[Preprocessing]
+        B --> C[Pix2Pix GAN]
+        C --> D[Image Enhancement]
+        D --> E[Generated Design]
+        E --> F[Visualization]
+    ```
+  </details>
 * **Workflow**: Captures stroke canvas drawings; runs edge normalization and boundary extraction via OpenCV; inputs contour arrays into a trained Pix2Pix generator; patch discriminator guides realistic detail rendering; returns the finalized product render to the designer workspace catalog.
 * **Engineering Challenges**: Resolving checkerboard artifacts in output designs by adding a custom L1 reconstruction loss to the GAN objective function.
 * **Key Features**:
@@ -205,8 +211,6 @@ Experienced developer with a strong foundation in building highly scalable web a
   - HTML5 Canvas drawing integration
   - OpenCV automatic sketch contour enhancement
 * **Impact**: Reduced prototyping time for jewelry designs from 8 hours to under 30 seconds.
-* **GitHub Repository**: <a href="https://github.com/Manish-111913/AI-Jewelry-Generation" title="Explore GitHub Repository">Repository</a>
-* **Live Demo**: <a href="https://github.com/Manish-111913" title="View Project Live Demo">Live Demo</a>
 
 ---
 
@@ -237,25 +241,11 @@ Experienced developer with a strong foundation in building highly scalable web a
 ## 🌐 Connect With Me
 
 <p align="left">
-  <a href="https://www.linkedin.com/in/kotasriramamanish07/" target="_blank" title="LinkedIn">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" height="35"/>
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://github.com/Manish-111913" target="_blank" title="Portfolio">
-    <img src="https://img.shields.io/badge/Portfolio-Website-blueviolet?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" height="35"/>
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://drive.google.com/file/d/1-nRGWdWntkj9s5_u0zdx_nYxoeablMRz/view?usp=sharing" target="_blank" title="Resume">
-    <img src="https://img.shields.io/badge/Resume-Google_Drive-success?style=for-the-badge&logo=googledrive&logoColor=white" alt="Resume" height="35"/>
-  </a>
-  &nbsp;&nbsp;
-  <a href="mailto:manishcse2006@gmail.com" title="Email">
-    <img src="https://img.shields.io/badge/Email-manishcse2006%40gmail.com-blue?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" height="35"/>
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://github.com/Manish-111913" target="_blank" title="GitHub">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" height="35"/>
-  </a>
+  <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kotasriramamanish07/" target="_blank" title="LinkedIn Profile">linkedin.com/in/kotasriramamanish07</a> &nbsp;•&nbsp;
+  <strong>Portfolio:</strong> <a href="https://manish-chi.vercel.app/" target="_blank" title="Personal Portfolio Website">manish-chi.vercel.app</a> &nbsp;•&nbsp;
+  <strong>Email:</strong> <a href="mailto:manishcse2006@gmail.com" title="Send Email">manishcse2006@gmail.com</a> &nbsp;•&nbsp;
+  <strong>Resume:</strong> <a href="https://drive.google.com/file/d/1-nRGWdWntkj9s5_u0zdx_nYxoeablMRz/view?usp=sharing" target="_blank" title="Download Resume">Curriculum Vitae</a> &nbsp;•&nbsp;
+  <strong>GitHub:</strong> <a href="https://github.com/Manish-111913" target="_blank" title="GitHub Profile">github.com/Manish-111913</a>
 </p>
 
 <p align="left">
