@@ -213,8 +213,15 @@ Experienced developer with a strong foundation in building highly scalable web a
 * **Impact**: Reduced prototyping time for jewelry designs from 8 hours to under 30 seconds.
 
 ---
+## 📈 GitHub Statistics
 
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=Manish-111913&theme=tokyonight" alt="GitHub Streak" height="175"/>
+  &nbsp;&nbsp;
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=Manish-111913&layout=compact&theme=tokyonight" alt="Top Languages" height="175"/>
+</p>
 
+---
 
 ## 🏆 Achievements
 
@@ -226,12 +233,26 @@ Experienced developer with a strong foundation in building highly scalable web a
 
 ## 🌐 Connect With Me
 
-<p align="left">
-  <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kotasriramamanish07/" target="_blank" title="LinkedIn Profile">linkedin.com/in/kotasriramamanish07</a> &nbsp;•&nbsp;
-  <strong>Portfolio:</strong> <a href="https://manish-chi.vercel.app/" target="_blank" title="Personal Portfolio Website">manish-chi.vercel.app</a> &nbsp;•&nbsp;
-  <strong>Email:</strong> <a href="mailto:manishcse2006@gmail.com" title="Send Email">manishcse2006@gmail.com</a> &nbsp;•&nbsp;
-  <strong>Resume:</strong> <a href="https://drive.google.com/file/d/1-nRGWdWntkj9s5_u0zdx_nYxoeablMRz/view?usp=sharing" target="_blank" title="Download Resume">Curriculum Vitae</a> &nbsp;•&nbsp;
-  <strong>GitHub:</strong> <a href="https://github.com/Manish-111913" target="_blank" title="GitHub Profile">github.com/Manish-111913</a>
+<p align="center">
+  <a href="https://www.linkedin.com/in/kotasriramamanish07/" target="_blank" title="LinkedIn Profile">
+    <img src="https://img.shields.io/badge/LinkedIn-1e1e2e?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" height="28"/>
+  </a>
+  &nbsp;
+  <a href="https://manish-chi.vercel.app/" target="_blank" title="Personal Portfolio Website">
+    <img src="https://img.shields.io/badge/Portfolio-1e1e2e?style=flat-square&logo=googlechrome&logoColor=white" alt="Portfolio" height="28"/>
+  </a>
+  &nbsp;
+  <a href="https://drive.google.com/file/d/1-nRGWdWntkj9s5_u0zdx_nYxoeablMRz/view?usp=sharing" target="_blank" title="Download Resume">
+    <img src="https://img.shields.io/badge/Resume-1e1e2e?style=flat-square&logo=googledrive&logoColor=white" alt="Resume" height="28"/>
+  </a>
+  &nbsp;
+  <a href="mailto:manishcse2006@gmail.com" title="Send Email">
+    <img src="https://img.shields.io/badge/Email-1e1e2e?style=flat-square&logo=gmail&logoColor=white" alt="Email" height="28"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/Manish-111913" target="_blank" title="GitHub Profile">
+    <img src="https://img.shields.io/badge/GitHub-1e1e2e?style=flat-square&logo=github&logoColor=white" alt="GitHub" height="28"/>
+  </a>
 </p>
 
 <p align="left">
