@@ -214,21 +214,7 @@ Experienced developer with a strong foundation in building highly scalable web a
 
 ---
 
-## 📈 GitHub Statistics
 
-<p align="center">
-  <img src="https://github-stats-extended.vercel.app/api?username=Manish-111913&show_icons=true&theme=tokyonight" alt="GitHub Stats" height="175"/>
-  &nbsp;&nbsp;
-  <img src="https://streak-stats.demolab.com/?user=Manish-111913&theme=tokyonight" alt="GitHub Streak" height="175"/>
-</p>
-
-<p align="center">
-  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=Manish-111913&layout=compact&theme=tokyonight" alt="Top Languages" height="150"/>
-  &nbsp;&nbsp;
-  <img src="https://github-profile-trophy.vercel.app/?username=Manish-111913&theme=tokyonight&margin-w=10&margin-h=10&column=4" alt="GitHub Trophies" height="150" />
-</p>
-
----
 
 ## 🏆 Achievements
 
