@@ -212,34 +212,16 @@ Experienced developer with a strong foundation in building highly scalable web a
 
 ## 📈 GitHub Statistics
 
-<table border="0" align="center" width="100%">
-  <tr>
-    <td align="center" width="50%">
-      <img src="https://github-readme-stats.vercel.app/api?username=Manish-111913&show_icons=true&theme=tokyonight&hides_format=true" alt="Manish's GitHub Stats" height="175"/>
-    </td>
-    <td align="center" width="50%">
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Manish-111913&theme=tokyonight" alt="GitHub Streak" height="175"/>
-    </td>
-  </tr>
-</table>
-
-<table border="0" align="center" width="100%">
-  <tr>
-    <td align="center" width="50%">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Manish-111913&layout=compact&theme=tokyonight" alt="Top Languages" height="150"/>
-    </td>
-    <td align="center" width="50%">
-      <img src="https://github-profile-trophy.vercel.app/?username=Manish-111913&theme=tokyonight&margin-w=10&margin-h=10&column=4" alt="GitHub Trophies" height="150" />
-    </td>
-  </tr>
-</table>
-
----
-
-## 📊 Contribution Activity
+<p align="center">
+  <img src="https://github-stats-extended.vercel.app/api?username=Manish-111913&show_icons=true&theme=tokyonight" alt="GitHub Stats" height="175"/>
+  &nbsp;&nbsp;
+  <img src="https://streak-stats.demolab.com/?user=Manish-111913&theme=tokyonight" alt="GitHub Streak" height="175"/>
+</p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Manish-111913&theme=tokyonight" alt="Contribution Graph" width="100%" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=Manish-111913&layout=compact&theme=tokyonight" alt="Top Languages" height="150"/>
+  &nbsp;&nbsp;
+  <img src="https://github-profile-trophy.vercel.app/?username=Manish-111913&theme=tokyonight&margin-w=10&margin-h=10&column=4" alt="GitHub Trophies" height="150" />
 </p>
 
 ---
