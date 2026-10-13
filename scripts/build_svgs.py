@@ -11,7 +11,7 @@ downloaded once into .cache/ (it is not committed). Everything else is plain SVG
 assets/activity.svg and the contribution numbers in hero.svg / about.svg are owned by
 scripts/gen_activity.py, which a GitHub Action runs every hour.
 """
-import argparse, io, math, os, random, sys, urllib.request, zipfile
+import argparse, io, math, os, random, re, sys, urllib.request, zipfile
 from html import escape
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +27,7 @@ LOGIN = "Manish-111913"
 # ==== CONTENT =============================================================================
 HERO = {
     "kicker": "FULL STACK · CLOUD · AI",
-    "first": "Srirama", "last": "Manish",
+    "first": "Kota Srirama", "last": "Manish",
     "full_name": "Kota Srirama Manish",
     "line1": "I build products end to end —",
     "line2": "from the interface to the cloud, with AI built in.",
@@ -44,7 +44,7 @@ MARQUEE = ["FULL STACK DEVELOPMENT", "CLOUD ENGINEERING", "RETRIEVAL-AUGMENTED G
 SECTIONS = [
     ("about", "ABOUT", "what I do, in plain words"),
     ("stack", "TECH STACK", "the tools I build with"),
-    ("projects", "PROJECTS", "what I've built, and why it's built that way"),
+    ("projects", "PROJECTS", "nine systems: what each does, how it works and why"),
     ("activity", "ACTIVITY", "real contribution data from my GitHub, not decoration"),
     ("ai", "AI ENGINEERING", "how I ground language models in real data"),
     ("contact", "CONTACT", "let's talk"),
@@ -83,8 +83,7 @@ STACK = [
 ]
 LEARNING = ["Deep learning", "Container orchestration", "Multi-agent systems"]
 
-# Projects arrive later. Each entry becomes assets/proj-N.svg; see project_card() for the fields.
-PROJECTS = []
+from projects import PROJECTS                                             # noqa: E402  (one entry per assets/proj-N.svg)
 
 AI = {
     "cards": [
@@ -457,61 +456,56 @@ def stack():
 
 
 # ==== projects ============================================================================
-def project_card(n, p):
-    """One architecture card. Fields of p:
-        name, subtitle, icons [icon keys], desc [2 lines], decision [2 lines], tradeoff [2 lines],
-        nodes [{x, y, w, h, title, sub, icon?, hot?}]   (coordinates inside the 843x179 diagram box)
-        edges [[(x, y), (x, y), ...]]                    (polylines; corners are rounded, arrow at the end)
-        labels [(x, y, text)]                            (small caps lane labels)
-    """
-    W, H = 900, 430
-    o = [f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="18" fill="url(#gCard)" stroke="{LINE}" />',
-         outline(str(n), 32, 64, 52, "ExtraBold", fill="none", extra='stroke="#2C4276" stroke-width="1.3"')[0],
-         outline(p["name"], 112, 47.3, 29.8, "SemiBold")[0],
-         label(p["subtitle"], 112, 72, 13, MUTED)]
-    for i, key in enumerate(reversed(p["icons"])):
-        cx = 856 - i * 40
-        o.append(f'<circle cx="{cx}" cy="48" r="17" fill="#0A1120" stroke="{LINE2}"/>' + icon(key, cx, 48, 0.75))
-    for i, ln in enumerate(p["desc"]):
-        o.append(label(ln, 28, 107 + i * 20, 14, "#C9D3EA"))
-    o.append(f'<rect x="28.5" y="142.5" width="843" height="179" rx="14" fill="#050912" stroke="{LINE}"/>')
-    o.append('<rect x="29" y="143" width="842" height="178" rx="13" fill="url(#dots)" opacity=".45"/>')
-    g = []
-    for x, y, s in p.get("labels", []):
-        g.append(mono(s, x, y, 9.5, DIM, weight=600, ls=1.8))
-    for i, pts in enumerate(p.get("edges", [])):
-        d = _rounded(pts)
-        (x1, y1), (x2, y2) = pts[-2], pts[-1]
-        ang = math.atan2(y2 - y1, x2 - x1)
-        a1 = (x2 - 5.2 * math.cos(ang) - 3 * math.sin(ang), y2 - 5.2 * math.sin(ang) + 3 * math.cos(ang))
-        a2 = (x2 - 5.2 * math.cos(ang) + 3 * math.sin(ang), y2 - 5.2 * math.sin(ang) - 3 * math.cos(ang))
-        g.append(f'<path d="{d}" stroke="{LINE2}" stroke-width="1.5" stroke-linecap="round"/>'
-                 f'<polygon points="{fmt(x2)},{fmt(y2)} {fmt(a1[0])},{fmt(a1[1])} {fmt(a2[0])},{fmt(a2[1])}" fill="{LINE2}"/>'
-                 f'<circle r="3.2" fill="{BLUE}" filter="url(#glowS)" opacity="0"><set attributeName="opacity" to="1" begin="{i*0.4:.1f}s"/>'
-                 f'<animateMotion dur="1.8s" begin="{i*0.4:.1f}s" repeatCount="indefinite" path="{d}" calcMode="linear"/></circle>')
-    for nd in p.get("nodes", []):
-        x, y, w, h = nd["x"], nd["y"], nd["w"], nd["h"]
-        hot = nd.get("hot")
-        g.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" fill="{"#0B1830" if hot else "#0A1120"}" stroke="{BLUE if hot else LINE2}" stroke-width="{1.4 if hot else 1}"/>')
-        tx = x + 12
-        if nd.get("icon"):
-            g.append(icon(nd["icon"], x + 24, y + h / 2, 0.8))
-            tx = x + 44
-        g.append(label(nd["title"], tx, y + h / 2 - 1, 13, TEXT, weight=600))
-        if nd.get("sub"):
-            g.append(mono(nd["sub"], tx, y + h / 2 + 13, 10, MUTED))
-        if hot:
-            g.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" stroke="{BLUE}" stroke-width="1.4" opacity="0"><animate attributeName="opacity" values="0;.9;0" dur="3.2s" repeatCount="indefinite"/>'
-                     f'<animate attributeName="stroke-width" values="1;5;1" dur="3.2s" repeatCount="indefinite"/></rect>')
-    o.append(f'<g transform="translate(28 142)">{"".join(g)}</g>')
-    o.append(f'<path d="M450.5 350 V418" stroke="{LINE}"/>')
-    o.append(mono("KEY DECISION", 30, 358, 10.5, BLUE, weight=700, ls=2))
-    o.append(mono("TRADE-OFF", 474, 358, 10.5, MUTED, weight=700, ls=2))
-    for i, ln in enumerate(p["decision"]):
-        o.append(label(ln, 30, 382 + i * 19, 13, TEXT))
-    for i, ln in enumerate(p["tradeoff"]):
-        o.append(label(ln, 474, 382 + i * 19, 13, MUTED))
-    svg(f"proj-{n}.svg", W, H, f"{p['name']} — architecture", f"{p['name']}: {p['subtitle']}. {' '.join(p['desc'])}", "\n".join(o))
+# The nine projects are described in scripts/projects.py; this section only draws them.
+KIND_LEGEND = [("io", "input / output"), ("proc", "step"), ("hot", "core step"), ("store", "data store"),
+               ("ext", "external service"), ("decision", "decision"), ("planned", "planned"), ("unverified", "not verified")]
+EXT = "#9B8CFF"
+BADGE = {"warn": ("#1A140A", "#5A4317", "#FFC66B"), "gold": ("#1A160A", "#5A4A17", "#FFD866"),
+         "blue": ("#0A1426", LINE2, "#9CC6FF")}
+EDGE = "#2E4372"
+
+
+def wrap(text, width, size, weight="Medium"):
+    lines, cur = [], ""
+    for word in text.split():
+        t = (cur + " " + word).strip()
+        if cur and text_width(t, size, weight) > width:
+            lines.append(cur)
+            cur = word
+        else:
+            cur = t
+    return lines + ([cur] if cur else [])
+
+
+def _port(nd, side):
+    x, y, w, h = nd["x"], nd["y"], nd["w"], nd["h"]
+    return {"l": (x, y + h / 2), "r": (x + w, y + h / 2), "t": (x + w / 2, y), "b": (x + w / 2, y + h)}[side]
+
+
+def _route(nodes, e):
+    sa, sb = e.get("sa", "r"), e.get("sb", "l")
+    p1, p2 = _port(nodes[e["a"]], sa), _port(nodes[e["b"]], sb)
+    if "ay" in e:                      # attach at a given height on a tall node
+        p1 = (p1[0], e["ay"])
+    if "by" in e:
+        p2 = (p2[0], e["by"])
+    if e.get("via"):
+        return [p1] + list(e["via"]) + [p2]
+    if sa in "lr" and sb in "lr":
+        if abs(p1[1] - p2[1]) < .5 and "mx" not in e:
+            return [p1, p2]
+        mx = e.get("mx", (p1[0] + p2[0]) / 2)
+        return [p1, (mx, p1[1]), (mx, p2[1]), p2]
+    if sa in "tb" and sb in "tb":
+        if abs(p1[0] - p2[0]) < .5 and "my" not in e:
+            return [p1, p2]
+        my = e.get("my", (p1[1] + p2[1]) / 2)
+        return [p1, (p1[0], my), (p2[0], my), p2]
+    if abs(p1[0] - p2[0]) < .5 or abs(p1[1] - p2[1]) < .5:
+        return [p1, p2]
+    if sa in "lr":
+        return [p1, (p2[0], p1[1]), p2]
+    return [p1, (p1[0], p2[1]), p2]
 
 
 def _rounded(pts, r=8):
@@ -524,6 +518,322 @@ def _rounded(pts, r=8):
         bx, by = x1 + (x2 - x1) / l2 * rr, y1 + (y2 - y1) / l2 * rr
         d += f" L{fmt(ax)} {fmt(ay)} Q{fmt(x1)} {fmt(y1)} {fmt(bx)} {fmt(by)}"
     return d + f" L{fmt(pts[-1][0])} {fmt(pts[-1][1])}"
+
+
+def _shape(kind, x, y, w, h, rx=None):
+    """Outline of one node."""
+    fill, stroke, sw, dash = "#0A1120", LINE2, 1, ""
+    if kind == "hot":
+        fill, stroke, sw = "#0B1830", BLUE, 1.4
+    elif kind == "ext":
+        stroke = EXT
+    elif kind == "planned":
+        fill, dash = "#070C17", ' stroke-dasharray="5 4"'
+    elif kind == "unverified":
+        fill, stroke, dash = "#070C17", "#5F6C8A", ' stroke-dasharray="1.5 3.5" stroke-linecap="round"'
+    if kind == "store":
+        e = min(6, h / 4)
+        return (f'<path d="M{fmt(x)} {fmt(y+e)} A{fmt(w/2)} {fmt(e)} 0 0 1 {fmt(x+w)} {fmt(y+e)} V{fmt(y+h-e)} A{fmt(w/2)} {fmt(e)} 0 0 1 {fmt(x)} {fmt(y+h-e)} Z" fill="{fill}" stroke="{stroke}"/>'
+                f'<path d="M{fmt(x)} {fmt(y+e)} A{fmt(w/2)} {fmt(e)} 0 0 0 {fmt(x+w)} {fmt(y+e)}" stroke="{stroke}"/>')
+    if kind == "decision":
+        cx, cy = x + w / 2, y + h / 2
+        return (f'<path d="M{fmt(cx)} {fmt(y)} L{fmt(x+w)} {fmt(cy)} L{fmt(cx)} {fmt(y+h)} L{fmt(x)} {fmt(cy)} Z" '
+                f'fill="#0B1426" stroke="{BLUE}" stroke-width="1.2" stroke-linejoin="round"/>')
+    if rx is None:
+        rx = h / 2 if kind == "io" else 10
+    out = f'<rect x="{fmt(x)}" y="{fmt(y)}" width="{fmt(w)}" height="{fmt(h)}" rx="{fmt(rx)}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{dash}/>'
+    if kind == "ext":
+        out += f'<rect x="{fmt(x+3)}" y="{fmt(y+3)}" width="{fmt(w-6)}" height="{fmt(h-6)}" rx="{fmt(max(rx-2.5, 1))}" stroke="{EXT}" stroke-opacity=".35"/>'
+    return out
+
+
+def _node(nd, errors):
+    x, y, w, h, kind = nd["x"], nd["y"], nd["w"], nd["h"], nd.get("kind", "proc")
+    o = [_shape(kind, x, y, w, h)]
+    title, sub = nd["t"], nd.get("s")
+    if kind == "decision":
+        lines = title.split("\n")
+        for i, ln in enumerate(lines):
+            if text_width(ln, 11.5, "SemiBold") > w * 0.66:
+                errors.append(f"decision '{ln}' too wide for w={w}")
+            o.append(label(ln, x + w / 2, y + h / 2 + 4 + (i - (len(lines) - 1) / 2) * 13, 11.5, TEXT, "middle", 600))
+        return "".join(o)
+    tx = x + 12
+    if nd.get("icon"):
+        o.append(icon(nd["icon"], x + 24, y + h / 2, 0.8))
+        tx = x + 44
+    elif kind == "io":
+        o.append(f'<circle cx="{fmt(x+15)}" cy="{fmt(y+h/2)}" r="3.2" fill="{BLUE}"/>')
+        tx = x + 26
+    room = x + w - tx - 8
+    if text_width(title, 13, "SemiBold") > room:
+        errors.append(f"title '{title}' needs {text_width(title, 13, 'SemiBold'):.0f}px, has {room:.0f}")
+    if sub and mono_width(sub, 10) > room + 4:
+        errors.append(f"sub '{sub}' needs {mono_width(sub, 10):.0f}px, has {room:.0f}")
+    ty = y + h / 2 + (-1 if sub else 4.5)
+    if kind in ("planned", "unverified"):
+        ty += 4
+        o.append(mono("PLANNED" if kind == "planned" else "NOT VERIFIED", tx, y + 13, 7.5, DIM, weight=600, ls=1))
+    o.append(label(title, tx, ty, 13, DIM if kind in ("planned", "unverified") else TEXT, weight=600))
+    if sub:
+        o.append(mono(sub, tx, ty + 14, 10, DIM if kind in ("planned", "unverified") else MUTED))
+    if kind == "hot":
+        o.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" stroke="{BLUE}" stroke-width="1.4" opacity="0"><animate attributeName="opacity" values="0;.9;0" dur="3.2s" repeatCount="indefinite"/>'
+                 f'<animate attributeName="stroke-width" values="1;5;1" dur="3.2s" repeatCount="indefinite"/></rect>')
+    return "".join(o)
+
+
+def _edge(i, pts, e):
+    d = _rounded(pts)
+    (x1, y1), (x2, y2) = pts[-2], pts[-1]
+    ang = math.atan2(y2 - y1, x2 - x1)
+    c, s = math.cos(ang), math.sin(ang)
+    a1 = (x2 - 6 * c - 3.2 * s, y2 - 6 * s + 3.2 * c)
+    a2 = (x2 - 6 * c + 3.2 * s, y2 - 6 * s - 3.2 * c)
+    dash = ' stroke-dasharray="4 4"' if e.get("dashed") else ""
+    o = (f'<path d="{d}" stroke="{EDGE}" stroke-width="1.5" stroke-linecap="round"{dash}/>'
+         f'<polygon points="{fmt(x2)},{fmt(y2)} {fmt(a1[0])},{fmt(a1[1])} {fmt(a2[0])},{fmt(a2[1])}" fill="{EDGE}"/>')
+    if not e.get("dashed"):
+        length = sum(math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(pts, pts[1:]))
+        b0 = f"{(i * 0.37) % 3:.2f}"
+        o += (f'<circle r="3" fill="{BLUE}" filter="url(#glowS)" opacity="0"><set attributeName="opacity" to="1" begin="{b0}s"/>'
+              f'<animateMotion dur="{max(1.2, length / 75):.1f}s" begin="{b0}s" repeatCount="indefinite" path="{d}" calcMode="linear"/></circle>')
+    if e.get("label"):
+        if e.get("lpos"):
+            lx, ly = e["lpos"]
+        else:
+            k = len(pts) // 2
+            lx, ly = (pts[k - 1][0] + pts[k][0]) / 2, (pts[k - 1][1] + pts[k][1]) / 2
+        tw = mono_width(e["label"], 9)
+        o += (f'<rect x="{fmt(lx-tw/2-4)}" y="{fmt(ly-7.5)}" width="{fmt(tw+8)}" height="14" rx="4" fill="#050912" stroke="#16203A"/>'
+              + mono(e["label"], lx, ly + 3, 9, "#8B99B8", "middle", 600))
+    return o
+
+
+def _legend_mark(kind, sx, sy):
+    if kind == "store":
+        return (f'<path d="M{sx} {sy+2} A8 2.5 0 0 1 {sx+16} {sy+2} V{sy+9} A8 2.5 0 0 1 {sx} {sy+9} Z" fill="#0A1120" stroke="{LINE2}"/>'
+                f'<path d="M{sx} {sy+2} A8 2.5 0 0 0 {sx+16} {sy+2}" stroke="{LINE2}"/>')
+    if kind == "decision":
+        return f'<path d="M{sx+8} {sy-1} L{sx+16} {sy+5} L{sx+8} {sy+11} L{sx} {sy+5} Z" fill="#0B1426" stroke="{BLUE}"/>'
+    if kind == "ext":
+        return f'<rect x="{sx}" y="{sy}" width="16" height="10" rx="3" fill="#0A1120" stroke="{EXT}"/>'
+    return _shape(kind, sx, sy, 16, 10, rx=5 if kind == "io" else 3)
+
+
+def diagram(dg, errors):
+    """Everything inside the diagram box, in box coordinates (843 wide)."""
+    nodes = {nd["id"]: nd for nd in dg["nodes"]}
+    g = []
+    for gx, gy, gw, gh, gl in dg.get("groups", []):
+        g.append(f'<rect x="{gx}" y="{gy}" width="{gw}" height="{gh}" rx="10" fill="#0A1222" fill-opacity=".6" stroke="#1A2540"/>')
+        g.append(mono(gl, gx + 12, gy + 15, 9, "#6F7D9C", weight=600, ls=1.6))
+    for x, y, s in dg.get("labels", []):
+        g.append(mono(s, x, y, 9, "#6F7D9C", weight=600, ls=1.6))
+    for i, e in enumerate(dg.get("edges", [])):
+        g.append(_edge(i, _route(nodes, e), e))
+    for nd in dg["nodes"]:
+        g.append(_node(nd, errors))
+    for x, y, s in dg.get("notes", []):
+        g.append(mono(s, x, y, 9, DIM))
+    for cy, lab, items, style in dg.get("chips", []):
+        g.append(mono(lab, 18, cy + 14.5, 9, "#6F7D9C", weight=600, ls=1.6))
+        cx = 18 + mono_width(lab, 9, 1.6) + 8
+        for it in items:
+            w = text_width(it, 10.5) + 18
+            if style == "planned":
+                g.append(f'<rect x="{fmt(cx)}" y="{cy}" width="{fmt(w)}" height="21" rx="10.5" fill="#070C17" stroke="#3A4A6E" stroke-dasharray="4 3"/>'
+                         + label(it, cx + 9, cy + 14.5, 10.5, DIM))
+            else:
+                g.append(f'<rect x="{fmt(cx)}" y="{cy}" width="{fmt(w)}" height="21" rx="10.5" fill="#0B1A33" stroke="#24406E"/>'
+                         + label(it, cx + 9, cy + 14.5, 10.5, TEXT))
+            cx += w + 6
+        if cx > 843:
+            errors.append(f"chip row '{lab}' overflows by {cx-843:.0f}px")
+    used = {nd.get("kind", "proc") for nd in dg["nodes"]}
+    lx, ly = 828, dg["h"] - 11
+    for kind, name in reversed(KIND_LEGEND):
+        if kind in used:
+            g.append(mono(name, lx, ly, 9, DIM, "end"))
+            lx -= mono_width(name, 9) + 22
+            g.append(_legend_mark(kind, lx, ly - 8))
+            lx -= 14
+    return "".join(g)
+
+
+def _badge(b, x, y):
+    txt, style = b
+    fill, stroke, col = BADGE[style]
+    w = mono_width(txt, 9.5, 1.2) + 20
+    return (f'<rect x="{fmt(x)}" y="{y}" width="{fmt(w)}" height="20" rx="10" fill="{fill}" stroke="{stroke}"/>'
+            + mono(txt, x + 10, y + 13.8, 9.5, col, weight=600, ls=1.2))
+
+
+def project_card(n, p):
+    """Desktop card: header, problem, flow diagram, stack, key decision and trade-off."""
+    W, errors, o = 900, [], []
+    o.append(outline(f"{n:02d}", 24, 64, 44, "ExtraBold", fill="none", extra='stroke="#2C4276" stroke-width="1.3"')[0])
+    t, tw = outline(p["name"], 112, 47.3, 29.8, "SemiBold")
+    o.append(t)
+    if p.get("badge"):
+        o.append(_badge(p["badge"], 112 + tw + 14, 28))
+    o.append(label(p["subtitle"], 112, 72, 13, MUTED))
+    for i, key in enumerate(reversed(p["icons"])):
+        cx = 856 - i * 40
+        o.append(f'<circle cx="{cx}" cy="48" r="17" fill="#0A1120" stroke="{LINE2}"/>' + icon(key, cx, 48, 0.75))
+    if p.get("icons") and 112 + tw + 14 + (mono_width(p["badge"][0], 9.5, 1.2) + 20 if p.get("badge") else 0) > 856 - 40 * len(p["icons"]) - 4:
+        errors.append("title + badge collide with the icons")
+    desc = wrap(p["problem"], 844, 14)
+    if len(desc) > 3:
+        errors.append(f"problem text is {len(desc)} lines")
+    for i, ln in enumerate(desc):
+        o.append(label(ln, 28, 107 + i * 20, 14, "#C9D3EA"))
+    y0 = 107 + (len(desc) - 1) * 20 + 22
+    dg = p["diagram"]
+    dh = dg["h"]
+    o.append(f'<rect x="28.5" y="{y0+.5}" width="843" height="{dh}" rx="14" fill="#050912" stroke="{LINE}"/>')
+    o.append(f'<rect x="29" y="{y0+1}" width="842" height="{dh-1}" rx="13" fill="url(#dots)" opacity=".45"/>')
+    o.append(f'<g transform="translate(28 {y0})">{diagram(dg, errors)}</g>')
+    # stack, grouped by role
+    y = y0 + dh + 30
+    o.append(mono("STACK", 30, y, 9.5, BLUE, weight=700, ls=2))
+    x0 = x = 92
+    for role, items in p["stack"]:
+        rw = mono_width(role.upper(), 9, 1.4)
+        iw = text_width(items, 12)
+        if x > x0 and x + rw + 8 + iw > 872:
+            x, y = x0, y + 22
+        o.append(mono(role.upper(), x, y, 9, DIM, weight=600, ls=1.4))
+        o.append(label(items, x + rw + 8, y + .5, 12, "#C9D3EA"))
+        x += rw + 8 + iw + 24
+    if p.get("stack_note"):
+        y += 20
+        o.append(mono(p["stack_note"], x0, y, 9.5, DIM))
+    y += 22
+    o.append(f'<path d="M28.5 {y}.5 H871.5" stroke="{LINE}"/>')
+    y += 30
+    dec, tra = wrap(p["decision"][1], 404, 13), wrap(p["tradeoff"][1], 396, 13)
+    o.append(mono("KEY DECISION", 30, y, 10.5, BLUE, weight=700, ls=2))
+    o.append(mono(p["decision"][0], 30 + mono_width("KEY DECISION", 10.5, 2) + 8, y, 8.5, DIM, weight=600, ls=1))
+    o.append(mono("TRADE-OFF", 474, y, 10.5, MUTED, weight=700, ls=2))
+    o.append(mono(p["tradeoff"][0], 474 + mono_width("TRADE-OFF", 10.5, 2) + 8, y, 8.5, DIM, weight=600, ls=1))
+    for i, ln in enumerate(dec):
+        o.append(label(ln, 30, y + 24 + i * 19, 13, TEXT))
+    for i, ln in enumerate(tra):
+        o.append(label(ln, 474, y + 24 + i * 19, 13, MUTED))
+    rows = max(len(dec), len(tra))
+    o.append(f'<path d="M450.5 {y-12} V{y+24+(rows-1)*19+8}" stroke="{LINE}"/>')
+    H = int(y + 24 + (rows - 1) * 19 + 28)
+    o.insert(0, f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="18" fill="url(#gCard)" stroke="{LINE}" />')
+    if errors:
+        raise SystemExit(f"proj-{n} ({p['name']}) layout problems:\n  " + "\n  ".join(errors))
+    svg(f"proj-{n}.svg", W, H, f"{p['name']} — architecture", f"{p['name']}: {p['subtitle']}. {p['problem']}", "\n".join(o))
+    project_card_mobile(n, p)
+
+
+def readme_projects():
+    """Rewrite the block between <!--projects--> and <!--/projects--> in README.md from PROJECTS."""
+    out = ['<p align="center"><img src="./assets/h-projects.svg" alt="Projects" width="100%"></p>', ""]
+    for n, p in enumerate(PROJECTS, 1):
+        out += ['<p align="center">', "<picture>",
+                f'<source media="(max-width: 700px)" srcset="./assets/proj-{n}-m.svg">',
+                f'<img src="./assets/proj-{n}.svg" alt="{escape(p["name"])}: {escape(p["summary"])}" width="100%">',
+                "</picture>", "</p>", ""]
+        if p["links"]:
+            out += ['<p align="center">', "\n&nbsp;·&nbsp;\n".join(f'<a href="{u}"><b>{t}</b></a>' for t, u in p["links"]), "</p>", ""]
+        out += ["<details>", f"<summary><b>How {p['name']} works</b>, step by step</summary>", ""]
+        for i, st in enumerate(p["steps"], 1):
+            note = {"planned": " *(planned)*", "unverified": " *(not verified)*"}.get(st["kind"], "")
+            sep = " " if st["t"].endswith("?") and not note else ": "
+            out.append(f"{i}. **{st['t']}**{note}{sep}{st['m']}")
+        out += ["", "| Part | Technology |", "| --- | --- |"]
+        out += [f"| {role} | {items} |" for role, items in p["stack"]]
+        chips = p["diagram"].get("chips", [])
+        built = [", ".join(items) for _, _, items, style in chips if style == "built"]
+        planned = [", ".join(items) for _, _, items, style in chips if style == "planned"]
+        extra = []
+        if built:
+            extra.append(f"**Also built:** {'; '.join(built)}.")
+        if planned:
+            extra.append(f"**Planned, not built yet:** {'; '.join(planned)}.")
+        if p.get("stack_note"):
+            extra.append(f"*{p['stack_note']}*")
+        if extra:
+            out += [""] + [e + "<br>" if i < len(extra) - 1 else e for i, e in enumerate(extra)]
+        out += ["", "</details>", "", "<br>", ""]
+    path = os.path.join(ROOT, "README.md")
+    s = open(path, encoding="utf-8").read()
+    block = "<!--projects-->\n" + "\n".join(out) + "<!--/projects-->"
+    s, k = re.subn(r"<!--projects-->.*?<!--/projects-->", lambda m: block, s, flags=re.S)
+    assert k == 1, "README.md needs one <!--projects--> ... <!--/projects--> block"
+    open(path, "w", encoding="utf-8", newline="\n").write(s)
+    print("wrote README.md projects block")
+
+
+def project_card_mobile(n, p):
+    """Phone version: the same story with the flow stacked top to bottom."""
+    W, o, X, CW = 480, [], 20, 440
+    o.append(outline(f"{n:02d}", 18, 50, 32, "ExtraBold", fill="none", extra='stroke="#2C4276" stroke-width="1.2"')[0])
+    name_lines = wrap(p["name"], CW - 62, 22, "SemiBold")
+    y = 42
+    for ln in name_lines:
+        o.append(outline(ln, 82, y, 22, "SemiBold")[0])
+        y += 26
+    y -= 4
+    for ln in wrap(p["subtitle"], CW - 62, 12.5):
+        o.append(label(ln, 82, y, 12.5, MUTED))
+        y += 18
+    if p.get("badge"):
+        o.append(_badge(p["badge"], 82, y - 6))
+        y += 24
+    y += 14
+    for ln in wrap(p["problem"], CW, 14):
+        o.append(label(ln, X, y, 14, "#C9D3EA"))
+        y += 20
+    y += 14
+    o.append(mono("HOW IT FLOWS", X, y, 9.5, BLUE, weight=700, ls=2))
+    y += 12
+    tags = {"store": "DATA", "decision": "DECISION", "ext": "EXTERNAL", "planned": "PLANNED", "unverified": "NOT VERIFIED"}
+    for i, st in enumerate(p["steps"]):
+        kind = st.get("kind", "proc")
+        subs = wrap(st["m"], CW - 60, 11.5)
+        h = 32 + 16 * len(subs)
+        o.append(_shape(kind if kind in ("planned", "unverified", "hot", "ext") else "proc", X, y, CW, h, rx=12))
+        o.append(f'<circle cx="{X+20}" cy="{y+20}" r="10" fill="#0B1830" stroke="{BLUE}" stroke-width="1.2"/>'
+                 + mono(i + 1, X + 20, y + 24, 10, BLUE, "middle", 700))
+        o.append(label(st["t"], X + 40, y + 25, 13.5, DIM if kind in ("planned", "unverified") else TEXT, weight=600))
+        if kind in tags:
+            o.append(mono(tags[kind], X + CW - 12, y + 24, 8.5, EXT if kind == "ext" else DIM, "end", 600, 1))
+        for k, ln in enumerate(subs):
+            o.append(label(ln, X + 40, y + 43 + k * 16, 11.5, MUTED))
+        y += h
+        if i < len(p["steps"]) - 1:
+            o.append(f'<path d="M{X+20} {y+3} V{y+11}" stroke="{EDGE}" stroke-width="1.5"/><polygon points="{X+20},{y+15} {X+16.5},{y+9} {X+23.5},{y+9}" fill="{EDGE}"/>')
+            y += 18
+    y += 34
+    o.append(mono("STACK", X, y, 9.5, BLUE, weight=700, ls=2))
+    y += 22
+    for role, items in p["stack"]:
+        o.append(mono(role.upper(), X, y, 9, DIM, weight=600, ls=1.2))
+        for k, ln in enumerate(wrap(items, CW - 128, 12)):
+            o.append(label(ln, X + 128, y + k * 17, 12, "#C9D3EA"))
+        y += 17 * len(wrap(items, CW - 128, 12)) + 5
+    if p.get("stack_note"):
+        for ln in wrap(p["stack_note"], CW, 10.5):
+            o.append(label(ln, X, y + 2, 10.5, DIM))
+            y += 15
+    for head, (tg, text), col, hc in (("KEY DECISION", p["decision"], TEXT, BLUE), ("TRADE-OFF", p["tradeoff"], MUTED, MUTED)):
+        y += 18
+        o.append(f'<path d="M{X} {y-2}.5 H{X+CW}" stroke="{LINE}"/>')
+        y += 26
+        o.append(mono(head, X, y, 10.5, hc, weight=700, ls=2) + mono(tg, X + mono_width(head, 10.5, 2) + 8, y, 8.5, DIM, weight=600, ls=1))
+        y += 24
+        for ln in wrap(text, CW, 13):
+            o.append(label(ln, X, y, 13, col))
+            y += 19
+    H = int(y + 10)
+    o.insert(0, f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="18" fill="url(#gCard)" stroke="{LINE}" />')
+    svg(f"proj-{n}-m.svg", W, H, f"{p['name']} — architecture", f"{p['name']}: {p['subtitle']}. {p['problem']}", "\n".join(o))
 
 
 # ==== AI engineering ======================================================================
@@ -672,6 +982,8 @@ def main():
     hero(); marquee(); headers(sections); about(); stack(); ai(); pills(); footer()
     for n, p in enumerate(PROJECTS, 1):
         project_card(n, p)
+    if PROJECTS:
+        readme_projects()
     if not a.offline:
         live.main(["--login", LOGIN, "--out", os.path.join(ASSETS, "activity.svg"), "--assets", ASSETS])
 

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="64" viewBox="0 0 900 64" role="img" aria-label="05 CONTACT" fill="none">
-<title>05 CONTACT</title>
-<desc>05 CONTACT</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="64" viewBox="0 0 900 64" role="img" aria-label="06 CONTACT" fill="none">
+<title>06 CONTACT</title>
+<desc>06 CONTACT</desc>
 <defs>
 
 <linearGradient id="gAcc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4D9FFF"/><stop offset="1" stop-color="#34E2E8"/></linearGradient>
@@ -17,7 +17,7 @@
 </defs>
 <rect x=".5" y=".5" width="899" height="63" rx="14" fill="#060A13" stroke="#16203A"/>
 <rect x="18.5" y="18.5" width="44" height="28" rx="8" fill="#0A1426" stroke="#223157"/>
-<text x="40.5" y="37" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#4D9FFF" text-anchor="middle" letter-spacing="1">05</text>
+<text x="40.5" y="37" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#4D9FFF" text-anchor="middle" letter-spacing="1">06</text>
 <path d="M85.7 39.7Q83.7 39.7 82.2 38.8Q80.7 37.9 79.8 36.3Q78.9 34.6 78.9 32.2Q78.9 29.9 79.8 28.2Q80.7 26.5 82.2 25.6Q83.8 24.8 85.7 24.8Q87.3 24.8 88.7 25.4Q90 26 90.9 27.1Q91.7 28.3 91.9 29.9H88.9Q88.7 28.7 87.8 28.1Q87 27.4 85.7 27.4Q84 27.4 83 28.7Q81.9 29.9 81.9 32.2Q81.9 34.6 83 35.8Q84 37 85.7 37Q87 37 87.8 36.4Q88.7 35.7 88.9 34.5H91.9Q91.8 35.9 91 37.1Q90.2 38.2 88.9 39Q87.5 39.7 85.7 39.7ZM104.3 39.7Q102.4 39.7 100.8 38.8Q99.3 37.9 98.4 36.3Q97.5 34.6 97.5 32.2Q97.5 29.9 98.4 28.2Q99.3 26.5 100.8 25.6Q102.4 24.8 104.3 24.8Q106.2 24.8 107.8 25.6Q109.3 26.5 110.2 28.2Q111.1 29.9 111.1 32.2Q111.1 34.6 110.2 36.3Q109.3 37.9 107.8 38.8Q106.2 39.7 104.3 39.7ZM104.3 37Q106 37 107 35.8Q108.1 34.6 108.1 32.2Q108.1 29.9 107 28.6Q106 27.4 104.3 27.4Q102.6 27.4 101.6 28.6Q100.5 29.9 100.5 32.2Q100.5 34.6 101.6 35.8Q102.6 37 104.3 37ZM117.1 39.5V24.9H120.4L125 32.3Q125.5 33 125.9 33.9Q126.4 34.7 126.9 35.9Q126.8 34.8 126.7 33.7Q126.7 32.6 126.7 31.9V24.9H129.7V39.5H126.4L122.2 32.8Q121.8 32.2 121.5 31.6Q121.1 30.9 120.8 30.2Q120.4 29.5 120 28.6Q120.1 29.9 120.1 31.1Q120.2 32.2 120.2 32.8V39.5ZM135.6 27.4V24.9H147.5V27.4H143V39.5H140V27.4ZM152.5 39.5 157.4 24.9H161.4L166.5 39.5H163.1L162 36.1H156.9L155.8 39.5ZM157.6 33.8H161.2L160.8 32.5Q160.5 31.4 160.1 30.1Q159.8 28.8 159.4 27.3Q159 28.8 158.7 30.1Q158.3 31.4 158 32.5ZM178.4 39.7Q176.5 39.7 174.9 38.8Q173.4 37.9 172.5 36.3Q171.6 34.6 171.6 32.2Q171.6 29.9 172.5 28.2Q173.4 26.5 175 25.6Q176.5 24.8 178.4 24.8Q180.1 24.8 181.4 25.4Q182.7 26 183.6 27.1Q184.5 28.3 184.7 29.9H181.6Q181.4 28.7 180.6 28.1Q179.7 27.4 178.5 27.4Q176.8 27.4 175.7 28.7Q174.7 29.9 174.7 32.2Q174.7 34.6 175.7 35.8Q176.8 37 178.5 37Q179.7 37 180.6 36.4Q181.4 35.7 181.7 34.5H184.7Q184.5 35.9 183.7 37.1Q182.9 38.2 181.6 39Q180.2 39.7 178.4 39.7ZM190.1 27.4V24.9H201.9V27.4H197.5V39.5H194.5V27.4Z" fill="#E9EEFB" />
 <text x="876" y="37" font-family="Inter, 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="500" fill="#98A4BD" text-anchor="end">let&#x27;s talk</text>
 <path d="M225.68 32.5 H801.79" stroke="#223157" stroke-width="1"/>
