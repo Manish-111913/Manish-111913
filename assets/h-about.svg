@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="64" viewBox="0 0 900 64" role="img" aria-label="01 ABOUT" fill="none">
+<title>01 ABOUT</title>
+<desc>01 ABOUT</desc>
+<defs>
+
+<linearGradient id="gAcc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4D9FFF"/><stop offset="1" stop-color="#34E2E8"/></linearGradient>
+<linearGradient id="gAccV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4D9FFF"/><stop offset="1" stop-color="#2B6FD1"/></linearGradient>
+<linearGradient id="gCard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0D1526"/><stop offset="1" stop-color="#080D18"/></linearGradient>
+<linearGradient id="gSheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4D9FFF" stop-opacity="0"/><stop offset=".5" stop-color="#4D9FFF" stop-opacity=".9"/><stop offset="1" stop-color="#34E2E8" stop-opacity="0"/></linearGradient>
+<filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="glowS" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" stroke="#1A2744" stroke-width="1" opacity=".55"/></pattern>
+<pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#2A3A63" opacity=".8"/></pattern>
+<linearGradient id="gAg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#3B82F6"/><stop offset=".45" stop-color="#EA4335"/><stop offset=".75" stop-color="#FBBC05"/><stop offset="1" stop-color="#34A853"/></linearGradient>
+
+
+</defs>
+<rect x=".5" y=".5" width="899" height="63" rx="14" fill="#060A13" stroke="#16203A"/>
+<rect x="18.5" y="18.5" width="44" height="28" rx="8" fill="#0A1426" stroke="#223157"/>
+<text x="40.5" y="37" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#4D9FFF" text-anchor="middle" letter-spacing="1">01</text>
+<path d="M78.5 39.5 83.4 24.9H87.4L92.5 39.5H89.1L88 36.1H82.9L81.8 39.5ZM83.6 33.8H87.2L86.8 32.5Q86.5 31.4 86.1 30.1Q85.8 28.8 85.4 27.3Q85 28.8 84.7 30.1Q84.3 31.4 84 32.5ZM98 39.5V24.9H103.8Q106.2 24.9 107.4 26Q108.6 27.1 108.6 28.7Q108.6 30 107.9 30.8Q107.1 31.6 106 31.8V32Q106.8 32 107.6 32.4Q108.3 32.9 108.7 33.6Q109.2 34.4 109.2 35.5Q109.2 36.6 108.6 37.5Q108.1 38.5 106.9 39Q105.8 39.5 104.2 39.5ZM101 37H103.6Q104.9 37 105.5 36.5Q106.1 36 106.1 35.2Q106.1 34.3 105.5 33.7Q104.8 33.1 103.7 33.1H101ZM101 31.1H103.4Q104.3 31.1 105 30.6Q105.6 30 105.6 29.2Q105.6 28.4 105 27.9Q104.5 27.4 103.4 27.4H101ZM121.5 39.7Q119.5 39.7 118 38.8Q116.5 37.9 115.6 36.3Q114.7 34.6 114.7 32.2Q114.7 29.9 115.6 28.2Q116.5 26.5 118 25.6Q119.5 24.8 121.5 24.8Q123.4 24.8 124.9 25.6Q126.5 26.5 127.4 28.2Q128.3 29.9 128.3 32.2Q128.3 34.6 127.4 36.3Q126.5 37.9 124.9 38.8Q123.4 39.7 121.5 39.7ZM121.5 37Q123.2 37 124.2 35.8Q125.2 34.6 125.2 32.2Q125.2 29.9 124.2 28.6Q123.2 27.4 121.5 27.4Q119.8 27.4 118.7 28.6Q117.7 29.9 117.7 32.2Q117.7 34.6 118.7 35.8Q119.8 37 121.5 37ZM140.3 39.7Q138.5 39.7 137.1 39Q135.8 38.4 135 37.2Q134.3 36 134.3 34.4V24.9H137.3V34.1Q137.3 35.4 138.1 36.2Q138.9 37.1 140.3 37.1Q141.7 37.1 142.5 36.2Q143.3 35.4 143.3 34.1V24.9H146.3V34.4Q146.3 36 145.5 37.2Q144.8 38.4 143.4 39Q142.1 39.7 140.3 39.7ZM152.1 27.4V24.9H164V27.4H159.6V39.5H156.6V27.4Z" fill="#E9EEFB" />
+<text x="876" y="37" font-family="Inter, 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="500" fill="#98A4BD" text-anchor="end">what I do, in plain words</text>
+<path d="M187.76 32.5 H707.11" stroke="#223157" stroke-width="1"/>
+<rect x="187.76" y="31.5" width="90" height="2" rx="1" fill="url(#gSheen)" opacity="0"><set attributeName="opacity" to="1" begin="0s"/><animateTransform attributeName="transform" type="translate" values="0 0;429.35 0;0 0" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.5;1" keySplines=".45 0 .55 1;.45 0 .55 1"/></rect>
+</svg>

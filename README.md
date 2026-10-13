@@ -1,103 +1,74 @@
-# KOTA SRIRAMA MANISH
-
-### Full Stack Developer | Cloud Engineer | AI Enthusiast
-**Transforming complex ideas into scalable software, cloud solutions, and impactful digital products.**
-
-
-
-Experienced developer with a strong foundation in building highly scalable web architectures, setting up robust cloud infrastructures, and integrating artificial intelligence capabilities. Proven track record in designing resilient RESTful APIs, automating deployment workflows, and delivering user-centric digital products that solve complex business logic and performance bottlenecks.
-
----
-
-## About Me
-
-- **Education**: Computer Science Undergraduate
-- **Current Internship**: Software Engineer & Full Stack Intern
-- **Current Learning**: Deep learning optimizations, container orchestration, and multi-agent system designs
-- **Areas of Interest**: Distributed systems, microservices, cloud security, and semantic data models
-- **Career Objective**: To engineer enterprise-grade web applications, optimize cloud pipelines, and craft high-performance software frameworks
-- **Current Focus**: Cloud native application design, system architecture planning, and backend performance tuning
-
----
-
-## Current Focus
-
-* **Full Stack Development**: Constructing clean, highly interactive, and performant web layouts.
-* **Cloud Engineering**: Provisioning reliable infrastructure, managing serverless architectures, and optimizing load balancing.
-* **AI Engineering**: Structuring advanced Retrieval-Augmented Generation (RAG) models, vector stores, and custom LLM inference endpoints.
-* **Retrieval-Augmented Generation (RAG)**: Developing precise semantic search indices and vector representations.
-* **Large Language Models**: Structuring custom workflows for text parsing and intelligent processing.
-* **Semantic Search**: Utilizing bi-encoders and cross-encoders to query dense vectors.
-* **System Design**: Architecting reliable, decoupled backend components.
-* **Scalable Software Architecture**: Implementing architectural design patterns that scale under load.
-
----
-
-## Tech Stack
-
-### Programming Languages
-<p>
-  <a href="https://en.cppreference.com/" target="_blank" title="C++"><img src="https://skillicons.dev/icons?i=cpp" alt="C++" height="40"/></a>&nbsp;
-  <a href="https://www.java.com/" target="_blank" title="Java"><img src="https://skillicons.dev/icons?i=java" alt="Java" height="40"/></a>&nbsp;
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" title="JavaScript"><img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript" height="40"/></a>&nbsp;
-  <a href="https://www.typescriptlang.org/" target="_blank" title="TypeScript"><img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript" height="40"/></a>&nbsp;
-  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" title="HTML5"><img src="https://skillicons.dev/icons?i=html" alt="HTML5" height="40"/></a>&nbsp;
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" title="CSS3"><img src="https://skillicons.dev/icons?i=css" alt="CSS3" height="40"/></a>
+<p align="center">
+<img src="./assets/hero.svg" alt="Kota Srirama Manish, full stack, cloud and AI engineer." width="100%">
+<img src="./assets/marquee.svg" alt="Focus areas: full stack development, cloud engineering, retrieval-augmented generation, large language models, semantic search, system design, scalable architecture" width="100%">
 </p>
 
-### Frontend & UI
-<p>
-  <a href="https://react.dev/" target="_blank" title="React.js"><img src="https://skillicons.dev/icons?i=react" alt="React.js" height="40"/></a>&nbsp;
-  <a href="https://nextjs.org/" target="_blank" title="Next.js"><img src="https://skillicons.dev/icons?i=nextjs" alt="Next.js" height="40"/></a>&nbsp;
-  <a href="https://tailwindcss.com/" target="_blank" title="Tailwind CSS"><img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind CSS" height="40"/></a>&nbsp;
-  <a href="https://getbootstrap.com/" target="_blank" title="Bootstrap"><img src="https://skillicons.dev/icons?i=bootstrap" alt="Bootstrap" height="40"/></a>
-</p>
+<br>
 
-### Backend & APIs
-<p>
-  <a href="https://nodejs.org/" target="_blank" title="Node.js"><img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js" height="40"/></a>&nbsp;
-  <a href="https://expressjs.com/" target="_blank" title="Express.js"><img src="https://skillicons.dev/icons?i=express" alt="Express.js" height="40"/></a>&nbsp;
-  <code>REST APIs</code> &nbsp; <code>WebSockets</code>
-</p>
-
-### Database
-<p>
-  <a href="https://www.postgresql.org/" target="_blank" title="PostgreSQL"><img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL" height="40"/></a>&nbsp;
-  <a href="https://www.mysql.com/" target="_blank" title="MySQL"><img src="https://skillicons.dev/icons?i=mysql" alt="MySQL" height="40"/></a>&nbsp;
-  <a href="https://www.mongodb.com/" target="_blank" title="MongoDB"><img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB" height="40"/></a>&nbsp;
-  <a href="https://redis.io/" target="_blank" title="Redis"><img src="https://skillicons.dev/icons?i=redis" alt="Redis" height="40"/></a>
-</p>
-
-### Cloud & DevOps
-<p>
-  <a href="https://aws.amazon.com/" target="_blank" title="Amazon Web Services"><img src="https://skillicons.dev/icons?i=aws" alt="Amazon Web Services" height="40"/></a>&nbsp;
-  <a href="https://www.docker.com/" target="_blank" title="Docker"><img src="https://skillicons.dev/icons?i=docker" alt="Docker" height="40"/></a>&nbsp;
-  <a href="https://www.jenkins.io/" target="_blank" title="Jenkins"><img src="https://skillicons.dev/icons?i=jenkins" alt="Jenkins" height="40"/></a>&nbsp;
-  <a href="https://git-scm.com/" target="_blank" title="Git"><img src="https://skillicons.dev/icons?i=git" alt="Git" height="40"/></a>&nbsp;
-  <a href="https://github.com/" target="_blank" title="GitHub"><img src="https://skillicons.dev/icons?i=github" alt="GitHub" height="40"/></a>&nbsp;
-  <a href="https://vercel.com/" target="_blank" title="Vercel"><img src="https://skillicons.dev/icons?i=vercel" alt="Vercel" height="40"/></a>&nbsp;
-  <a href="https://www.netlify.com/" target="_blank" title="Netlify"><img src="https://skillicons.dev/icons?i=netlify" alt="Netlify" height="40"/></a>&nbsp;
-  <a href="https://firebase.google.com/" target="_blank" title="Firebase"><img src="https://skillicons.dev/icons?i=firebase" alt="Firebase" height="40"/></a>&nbsp;
-  <code>Render</code> &nbsp; <code>CI/CD</code>
-</p>
-
-### Developer Tools
-<p>
-  <a href="https://code.visualstudio.com/" target="_blank" title="Visual Studio Code"><img src="https://skillicons.dev/icons?i=vscode" alt="Visual Studio Code" height="40"/></a>&nbsp;
-  <code>Cursor</code> &nbsp; <code>Antigravity</code>
-</p>
-
-### Soft Skills
-<code>Leadership</code> &nbsp; <code>Communication</code> &nbsp; <code>Teamwork</code> &nbsp; <code>Problem Solving</code> &nbsp; <code>Research</code>
-
----
-
-
-## GitHub Statistics
+<p align="center"><img src="./assets/h-about.svg" alt="About" width="100%"></p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com/?user=Manish-111913&theme=tokyonight" alt="GitHub Streak" height="175"/>
-  &nbsp;&nbsp;
-  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=Manish-111913&layout=compact&theme=tokyonight" alt="Top Languages" height="175"/>
+Every product has three layers: the screen people use, the server behind it and the cloud it runs on.<br>
+<b>I build across all three</b>, and I add AI where it earns its place. Computer Science student,<br>
+currently a Software Engineer &amp; Full Stack Intern.
+</p>
 
+<p align="center"><img src="./assets/about.svg" alt="Headline numbers, four strengths (full stack development, cloud engineering, AI engineering, system design) and my loop: design, build, deploy, scale." width="100%"></p>
 
+<br>
+
+<p align="center"><img src="./assets/h-stack.svg" alt="Tech stack" width="100%"></p>
+
+<p align="center"><img src="./assets/stack.svg" alt="Languages: C++, Java, JavaScript, TypeScript, HTML5, CSS3. Frontend: React, Next.js, Tailwind CSS, Bootstrap. Backend and data: Node.js, Express, PostgreSQL, MySQL, MongoDB, Redis, REST APIs and WebSockets. Cloud: AWS, Vercel, Netlify, Firebase, Render. DevOps and tools: Docker, Jenkins, CI/CD, Git, GitHub, VS Code. AI-native editors: Cursor, Antigravity. Currently learning deep learning, container orchestration and multi-agent systems." width="100%"></p>
+
+<br>
+
+<!-- TODO(manish): projects go here. Add each one to PROJECTS in scripts/build_svgs.py, run it, then uncomment:
+
+<p align="center"><img src="./assets/h-projects.svg" alt="Projects" width="100%"></p>
+
+<p align="center"><img src="./assets/proj-1.svg" alt="PROJECT NAME: one sentence describing the architecture diagram." width="100%"></p>
+
+<p align="center">
+<a href="https://github.com/Manish-111913/REPO-NAME"><b>Source code</b></a>
+&nbsp;·&nbsp;
+<a href="https://LIVE-DEMO-URL">Live demo</a>
+</p>
+
+<details>
+<summary><b>Run PROJECT NAME</b></summary>
+
+```bash
+# commands that start it locally
+```
+
+</details>
+
+<br>
+-->
+
+<p align="center"><img src="./assets/h-activity.svg" alt="Activity" width="100%"></p>
+
+<p align="center"><img src="./assets/activity.svg" alt="Contribution heatmap for the last 26 weeks with my yearly total, current streak, busiest day and contributions per month." width="100%"></p>
+
+<p align="center"><sub>Drawn from my real GitHub contributions and refreshed every hour by a GitHub Action.</sub></p>
+
+<br>
+
+<p align="center"><img src="./assets/h-ai.svg" alt="AI engineering" width="100%"></p>
+
+<p align="center"><img src="./assets/ai.svg" alt="Two focus areas. Semantic search: the query and every document become vectors and the nearest neighbours by cosine similarity win. Two-stage retrieval: a fast bi-encoder pulls candidates and a precise cross-encoder reranks them for the LLM. A RAG answer is built in four steps: chunk and embed, retrieve top-k, rerank, answer with sources." width="100%"></p>
+
+<br>
+
+<p align="center"><img src="./assets/h-contact.svg" alt="Contact" width="100%"></p>
+
+<p align="center">
+<a href="https://manish-chi.vercel.app/"><img src="./assets/pill-portfolio.svg" alt="Portfolio" width="156"></a>
+<a href="https://www.linkedin.com/in/kotasriramamanish07/"><img src="./assets/pill-linkedin.svg" alt="LinkedIn" width="156"></a>
+<a href="https://drive.google.com/file/d/1-nRGWdWntkj9s5_u0zdx_nYxoeablMRz/view?usp=sharing"><img src="./assets/pill-resume.svg" alt="Resume" width="156"></a>
+<a href="https://github.com/Manish-111913"><img src="./assets/pill-github.svg" alt="GitHub" width="156"></a>
+<a href="mailto:manishcse2006@gmail.com"><img src="./assets/pill-email.svg" alt="Email" width="156"></a>
+</p>
+
+<p align="center"><img src="./assets/footer.svg" alt="Design it. Build it. Ship it. Scale it." width="100%"></p>
