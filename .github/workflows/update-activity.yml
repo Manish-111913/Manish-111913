@@ -1,10 +1,9 @@
-# Keeps the commit heatmap (assets/activity.svg) and the contribution count in the hero and
-# About cards current with no manual work. It reads the same public contribution calendar
+# Keeps the contribution count in the hero and About cards current with no manual work. It reads the same public contribution calendar
 # that github.com shows on your profile, so it needs no token or secret.
 #
 # Runs: every hour, right after you push this file (or the script), and on demand from the
 # Actions tab. It only commits when the numbers actually changed.
-name: Update commit activity
+name: Update contribution count
 
 on:
   schedule:
@@ -31,8 +30,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Rebuild activity.svg and sync the live numbers
-        run: python scripts/gen_activity.py --login Manish-111913 --out assets/activity.svg --assets assets
+      - name: Sync the live contribution numbers
+        run: python scripts/gen_activity.py --login Manish-111913 --assets assets
       - name: Commit only if something changed
         run: |
           if git diff --quiet; then
@@ -41,7 +40,7 @@ jobs:
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/activity.svg assets/hero.svg assets/about.svg
-          git commit -m "chore: refresh commit activity"
+          git add assets/hero.svg assets/about.svg
+          git commit -m "chore: refresh contribution count"
           git pull --rebase origin main
           git push

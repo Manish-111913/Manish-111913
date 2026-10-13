@@ -8,8 +8,8 @@ Display text (names, section titles, big numbers) is converted to outlines with 
 because GitHub shows README images as <img>, where an SVG cannot load web fonts. Inter 4.0 is
 downloaded once into .cache/ (it is not committed). Everything else is plain SVG <text>.
 
-assets/activity.svg and the contribution numbers in hero.svg / about.svg are owned by
-scripts/gen_activity.py, which a GitHub Action runs every hour.
+The contribution numbers in hero.svg / about.svg are owned by scripts/gen_activity.py,
+which a GitHub Action runs every hour.
 """
 import argparse, io, math, os, random, re, sys, urllib.request, zipfile
 from html import escape
@@ -45,8 +45,6 @@ SECTIONS = [
     ("about", "ABOUT", "what I do, in plain words"),
     ("stack", "TECH STACK", "the tools I build with"),
     ("projects", "PROJECTS", "nine systems: what each does, how it works and why"),
-    ("activity", "ACTIVITY", "real contribution data from my GitHub, not decoration"),
-    ("ai", "AI ENGINEERING", "how I ground language models in real data"),
     ("contact", "CONTACT", "let's talk"),
 ]
 
@@ -84,26 +82,6 @@ STACK = [
 LEARNING = ["Deep learning", "Container orchestration", "Multi-agent systems"]
 
 from projects import PROJECTS                                             # noqa: E402  (one entry per assets/proj-N.svg)
-
-AI = {
-    "cards": [
-        {"title": "semantic-search", "tag": "FOCUS",
-         "desc": ["Finds text by meaning, not by keywords: the", "query and every document become vectors."],
-         "visual": "vectors",
-         "stats": [("k=5", "nearest neighbours", "returned for each query"), ("cos θ", "similarity score", "angle between two vectors")],
-         "pills": ["Embeddings", "Dense vectors", "Cosine similarity", "Vector stores"],
-         "pills2": ["Semantic indices", "Text parsing", "Chunking"]},
-        {"title": "two-stage-retrieval", "tag": "FOCUS",
-         "desc": ["A fast bi-encoder pulls candidates; a precise", "cross-encoder reranks them for the LLM."],
-         "visual": "funnel",
-         "stats": [("100", "candidates", "fast recall"), ("5", "passages", "precise rerank")],
-         "pills": ["Bi-encoders", "Cross-encoders", "Reranking", "RAG"],
-         "pills2": ["LLM inference", "Custom endpoints", "Workflows"]},
-    ],
-    "steps_title": "HOW A RAG ANSWER IS BUILT",
-    "steps": ["Chunk and embed", "Retrieve top-k", "Rerank", "Answer with sources"],
-    "steps_note": "goal: every answer traces back to a source",
-}
 
 CONTACT = [
     ("portfolio", "Portfolio", "see my work"),
@@ -836,96 +814,6 @@ def project_card_mobile(n, p):
     svg(f"proj-{n}-m.svg", W, H, f"{p['name']} — architecture", f"{p['name']}: {p['subtitle']}. {p['problem']}", "\n".join(o))
 
 
-# ==== AI engineering ======================================================================
-def vectors_visual():
-    """A 2-D slice of embedding space: a query lands, its nearest neighbours light up."""
-    rnd = random.Random(11)
-    centres = [(70, 128, "#2D5FB0"), (196, 116, "#2D5FB0"), (110, 196, "#2D5FB0"), (214, 192, "#2D5FB0")]
-    pts = []
-    for cx, cy, _ in centres:
-        for _ in range(22):
-            a, r = rnd.uniform(0, 6.283), abs(rnd.gauss(0, 1)) * 17
-            x, y = cx + math.cos(a) * r * 1.3, cy + math.sin(a) * r
-            if 44 <= x <= 246 and 106 <= y <= 216:
-                pts.append((x, y))
-    q = (182, 160)
-    near = sorted(pts, key=lambda p: math.hypot(p[0] - q[0], p[1] - q[1]))[:5]
-    o = [f'<rect x="24" y="96" width="236" height="140" rx="10" fill="#050912" stroke="{LINE}"/>',
-         f'<path d="M36 224 H248 M36 224 V106" stroke="{LINE2}" stroke-width="1"/>']
-    for p in pts:
-        if p in near:
-            continue
-        o.append(f'<circle cx="{fmt(p[0])}" cy="{fmt(p[1])}" r="3" fill="#1B2A4C"/>')
-    o.append(f'<circle cx="{q[0]}" cy="{q[1]}" r="6" stroke="{CYAN}" stroke-width="1.2" opacity="0"><animate attributeName="r" values="6;40" dur="3.2s" repeatCount="indefinite"/>'
-             f'<animate attributeName="opacity" values=".8;0" dur="3.2s" repeatCount="indefinite"/></circle>')
-    for i, p in enumerate(near):
-        t = 0.12 + i * 0.08
-        o.append(f'<path d="M{q[0]} {q[1]} L{fmt(p[0])} {fmt(p[1])}" stroke="{BLUE}" stroke-width="1.2" stroke-dasharray="2 3" opacity="0">'
-                 f'<animate attributeName="opacity" values="0;0;.9;.9;0" keyTimes="0;{t:.2f};{t+.05:.2f};.85;1" dur="3.2s" repeatCount="indefinite"/></path>')
-        o.append(f'<circle cx="{fmt(p[0])}" cy="{fmt(p[1])}" r="3.4" fill="#1B2A4C"><animate attributeName="fill" values="#1B2A4C;#1B2A4C;#4D9FFF;#4D9FFF;#1B2A4C" '
-                 f'keyTimes="0;{t:.2f};{t+.05:.2f};.85;1" dur="3.2s" repeatCount="indefinite"/></circle>')
-    o.append(f'<path d="M{q[0]} {q[1]-7} l7 7 l-7 7 l-7 -7 z" fill="{CYAN}" filter="url(#glowS)"/>')
-    o.append(mono("query", q[0] + 10, q[1] - 9, 9.5, CYAN, weight=600))
-    o.append(mono("embedding space", 248, 234, 9, DIM, "end"))
-    return "".join(o)
-
-
-def funnel_visual():
-    """Candidates narrowing stage by stage."""
-    rows = [("corpus · every chunk", 224, "#16264A", TEXT), ("bi-encoder · top 100", 190, "#1F4A8F", TEXT),
-            ("cross-encoder · top 5", 156, "#2F74D6", TEXT), ("LLM answer", 104, "#34E2E8", BG)]
-    o = []
-    for i, (name, w, col, tc) in enumerate(rows):
-        y = 98 + i * 32
-        x = 142 - w / 2
-        assert text_width(name, 11, "SemiBold") < w - 16, name
-        o.append(f'<rect x="{fmt(x)}" y="{y}" width="{w}" height="24" rx="8" fill="{col}"/>')
-        o.append(f'<rect x="{fmt(x)}" y="{y}" width="{w}" height="24" rx="8" fill="#fff" opacity="0"><animate attributeName="opacity" '
-                 f'values="0;.3;0;0" keyTimes="0;{.06+i*.14:.2f};{.16+i*.14:.2f};1" dur="4s" repeatCount="indefinite"/></rect>')
-        o.append(label(name, 142, y + 16, 11, tc, "middle", 600))
-        if i < 3:
-            o.append(f'<path d="M142 {y+25} V{y+31}" stroke="{LINE2}" stroke-width="1.4"/>')
-    o.append(mono("illustrative", 30, 238, 9, DIM))
-    return "".join(o)
-
-
-def ai():
-    W, H = 900, 428
-    o = []
-    for c, card in enumerate(AI["cards"]):
-        g = [f'<rect x="0.5" y="0.5" width="439" height="327" rx="16" fill="url(#gCard)" stroke="{LINE}" />',
-             mono(card["title"], 24, 36, 13.5, BLUE, weight=700)]
-        tw = mono_width(card["tag"], 10, 1.5) + 20
-        g.append(f'<rect x="{fmt(416-tw)}" y="20" width="{fmt(tw)}" height="22" rx="11" fill="#0A1120" stroke="{LINE2}"/>'
-                 + mono(card["tag"], 426 - tw, 34.5, 10, MUTED, ls=1.5))
-        for i, ln in enumerate(card["desc"]):
-            g.append(label(ln, 24, 62 + i * 18, 13, "#C9D3EA"))
-        g.append(vectors_visual() if card["visual"] == "vectors" else funnel_visual())
-        for i, (big, l1, l2) in enumerate(card["stats"]):
-            y = 131 + i * 67
-            g.append(outline(big, 282, y, 42, "ExtraBold", ls=-0.45, fill="url(#gAcc)")[0])
-            g.append(label(l1, 282, y + 12, 12.5, TEXT, weight=600))
-            g.append(label(l2, 282, y + 27, 11, DIM))
-        row, _ = pill_row(card["pills"], 24, 252)
-        row2, _ = pill_row(card["pills2"], 24, 284, primary=False)
-        g += [row, row2]
-        o.append(f'<g transform="translate({c*460} 0)">' + "\n".join(g) + "</g>")
-    s = [f'<rect x="0.5" y="0.5" width="899" height="83" rx="16" fill="url(#gCard)" stroke="{LINE}" />',
-         mono(AI["steps_title"], 24, 32, 10.5, DIM, weight=600, ls=2),
-         f'<circle r="3.4" fill="{CYAN}" filter="url(#glow)"><animateMotion dur="6s" repeatCount="indefinite" path="M44 58 L852 58"/></circle>']
-    for i, st in enumerate(AI["steps"]):
-        cx = 44 + i * 214
-        end = cx + 20 + text_width(st, 13, "SemiBold") + 10
-        nxt = cx + 214 - 17 if i < len(AI["steps"]) - 1 else 852
-        s.insert(2, f'<path d="M{fmt(end)} 58 L{fmt(nxt)} 58" stroke="{LINE2}" stroke-width="1.4" stroke-dasharray="2 6" stroke-linecap="round"/>')
-        s.append(f'<circle cx="{cx}" cy="58" r="11" fill="#0B1830" stroke="{BLUE}" stroke-width="1.4"/>' + mono(i + 1, cx, 62, 11, BLUE, "middle", 700))
-        s.append(label(st, cx + 20, 62.5, 13, TEXT, weight=600))
-    s.append(mono(AI["steps_note"], 876, 32, 11, MUTED, "end"))
-    o.append('<g transform="translate(0 344)">' + "\n".join(s) + "</g>")
-    svg("ai.svg", W, H, "AI engineering",
-        "Semantic search over embeddings, two-stage retrieval with a bi-encoder and a cross-encoder, and how a RAG answer is built.", "\n".join(o))
-
-
 # ==== contact pills =======================================================================
 PILL_ICONS = {
     "portfolio": ('<g transform="translate(14 16)" stroke="#4D9FFF" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/>'
@@ -979,13 +867,13 @@ def main():
     ensure_fonts()
     os.makedirs(ASSETS, exist_ok=True)
     sections = [s for s in SECTIONS if s[0] != "projects" or PROJECTS]
-    hero(); marquee(); headers(sections); about(); stack(); ai(); pills(); footer()
+    hero(); marquee(); headers(sections); about(); stack(); pills(); footer()
     for n, p in enumerate(PROJECTS, 1):
         project_card(n, p)
     if PROJECTS:
         readme_projects()
     if not a.offline:
-        live.main(["--login", LOGIN, "--out", os.path.join(ASSETS, "activity.svg"), "--assets", ASSETS])
+        live.main(["--login", LOGIN, "--assets", ASSETS])
 
 
 if __name__ == "__main__":
